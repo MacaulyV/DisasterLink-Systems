@@ -6,16 +6,15 @@
 
 ## 🧩 **Problema**
 
-> Desastres naturais como enchentes, deslizamentos, ondas de calor e tempestades causam impactos imediatos e severos nas cidades brasileiras.
-> 
-> 
-> 🚫 **Desafio atual:**
-> 
-> - Informação descentralizada e lenta
-> - Moradores sem canal fácil de denúncia ou ajuda
-> - Defesa Civil e órgãos oficiais com pouca visibilidade em tempo real
-> - Dificuldade para priorizar áreas e direcionar recursos de forma eficiente
-> - Falta de integração entre tecnologia, população e resposta oficial
+Desastres naturais como enchentes, deslizamentos, ondas de calor e tempestades causam impactos imediatos e severos nas cidades brasileiras.
+
+🚫 **Desafio atual:**
+
+- Informação descentralizada e lenta
+- Moradores sem canal fácil de denúncia ou ajuda
+- Defesa Civil e órgãos oficiais com pouca visibilidade em tempo real
+- Dificuldade para priorizar áreas e direcionar recursos de forma eficiente
+- Falta de integração entre tecnologia, população e resposta oficial
 
 ---
 
