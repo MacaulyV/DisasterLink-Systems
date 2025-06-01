@@ -1,0 +1,805 @@
+{
+  "Version": 1,
+  "Hash": "nSYVLlviyBpfpFujWfoQjdRDu6ZsYD22/yPNdSo8rFQ=",
+  "Source": "DisasterLink-API",
+  "BasePath": "_content/DisasterLink-API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "DisasterLink-API\\wwwroot",
+      "Source": "DisasterLink-API",
+      "ContentRoot": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\",
+      "BasePath": "_content/DisasterLink-API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "SourceId": "DisasterLink-API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/DisasterLink-API",
+      "RelativePath": "swagger-custom#[.{fingerprint=x8dvpwfrfe}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-custom.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "kgpn64dunt",
+      "Integrity": "XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-custom.js"
+    },
+    {
+      "Identity": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6z0kqpfs5z-1fg9j3rrd7.gz",
+      "SourceId": "DisasterLink-API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/DisasterLink-API",
+      "RelativePath": "swagger-ui#[.{fingerprint=1fg9j3rrd7}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-ui.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "amj6hhv3hs",
+      "Integrity": "0u17K1kQ7fQ1r1B0/TJ/9PxkVXhiKwb+r10NqKYpmWs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-ui.css"
+    },
+    {
+      "Identity": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\DisasterLink-Systems-Logo.png",
+      "SourceId": "DisasterLink-API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\",
+      "BasePath": "_content/DisasterLink-API",
+      "RelativePath": "DisasterLink-Systems-Logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vgpcbnf8f4",
+      "Integrity": "76IqEpm58tBIf5LpLMQKfHVz1dty1S6X+dQ9/fHGz6I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\DisasterLink-Systems-Logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-custom.js",
+      "SourceId": "DisasterLink-API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\",
+      "BasePath": "_content/DisasterLink-API",
+      "RelativePath": "swagger-custom#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x8dvpwfrfe",
+      "Integrity": "0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-custom.js"
+    },
+    {
+      "Identity": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-ui.css",
+      "SourceId": "DisasterLink-API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\",
+      "BasePath": "_content/DisasterLink-API",
+      "RelativePath": "swagger-ui#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1fg9j3rrd7",
+      "Integrity": "XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-ui.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "DisasterLink-Systems-Logo.png",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\DisasterLink-Systems-Logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "113939"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"76IqEpm58tBIf5LpLMQKfHVz1dty1S6X+dQ9/fHGz6I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 01:45:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-76IqEpm58tBIf5LpLMQKfHVz1dty1S6X+dQ9/fHGz6I="
+        }
+      ]
+    },
+    {
+      "Route": "DisasterLink-Systems-Logo.vgpcbnf8f4.png",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\DisasterLink-Systems-Logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "113939"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"76IqEpm58tBIf5LpLMQKfHVz1dty1S6X+dQ9/fHGz6I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 01:45:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vgpcbnf8f4"
+        },
+        {
+          "Name": "label",
+          "Value": "DisasterLink-Systems-Logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-76IqEpm58tBIf5LpLMQKfHVz1dty1S6X+dQ9/fHGz6I="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-custom.js",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000192678227"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5189"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-custom.js",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-custom.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20097"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-custom.js.gz",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-custom.x8dvpwfrfe.js",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000192678227"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5189"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x8dvpwfrfe"
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-custom.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-custom.x8dvpwfrfe.js",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-custom.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20097"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x8dvpwfrfe"
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-custom.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-custom.x8dvpwfrfe.js.gz",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x8dvpwfrfe"
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-custom.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui.1fg9j3rrd7.css",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6z0kqpfs5z-1fg9j3rrd7.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000360750361"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2771"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0u17K1kQ7fQ1r1B0/TJ/9PxkVXhiKwb+r10NqKYpmWs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 20:20:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1fg9j3rrd7"
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-ui.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui.1fg9j3rrd7.css",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-ui.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10150"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 20:20:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1fg9j3rrd7"
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-ui.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui.1fg9j3rrd7.css.gz",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6z0kqpfs5z-1fg9j3rrd7.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2771"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0u17K1kQ7fQ1r1B0/TJ/9PxkVXhiKwb+r10NqKYpmWs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 20:20:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1fg9j3rrd7"
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-ui.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0u17K1kQ7fQ1r1B0/TJ/9PxkVXhiKwb+r10NqKYpmWs="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui.css",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6z0kqpfs5z-1fg9j3rrd7.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000360750361"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2771"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0u17K1kQ7fQ1r1B0/TJ/9PxkVXhiKwb+r10NqKYpmWs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 20:20:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui.css",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-ui.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10150"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 20:20:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui.css.gz",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6z0kqpfs5z-1fg9j3rrd7.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2771"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0u17K1kQ7fQ1r1B0/TJ/9PxkVXhiKwb+r10NqKYpmWs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 20:20:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0u17K1kQ7fQ1r1B0/TJ/9PxkVXhiKwb+r10NqKYpmWs="
+        }
+      ]
+    }
+  ]
+}
