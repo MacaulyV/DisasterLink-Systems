@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\DisasterLink-Systems-Logo.png",
+      "PackagePath": "staticwebassets\\DisasterLink-Systems-Logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-custom.js",
+      "PackagePath": "staticwebassets\\swagger-custom.js"
+    },
+    {
+      "Id": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-ui.css",
+      "PackagePath": "staticwebassets\\swagger-ui.css"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.DisasterLink-API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.DisasterLink-API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.DisasterLink-API.props",
+      "PackagePath": "build\\DisasterLink-API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.DisasterLink-API.props",
+      "PackagePath": "buildMultiTargeting\\DisasterLink-API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.DisasterLink-API.props",
+      "PackagePath": "buildTransitive\\DisasterLink-API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

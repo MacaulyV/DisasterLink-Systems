@@ -1,0 +1,1955 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DisasterLink-API</name>
+    </assembly>
+    <members>
+        <member name="T:DisasterLink_API.Config.SwaggerDefaultValues">
+            <summary>
+            Classe para configurar os valores padrão no Swagger
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Config.SwaggerTagsSorter">
+            <summary>
+            Ordena as tags do Swagger em ordem alfabética
+            </summary>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AbrigosTemporariosController.GetMapa">
+            <summary>
+            Retorna uma lista completa de todos os abrigos temporários cadastrados no sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite visualizar todos os abrigos temporários disponíveis.
+            
+            Características:
+            - Acesso público (não requer autenticação)
+            - Retorna lista completa de abrigos
+            - Inclui informações detalhadas de cada abrigo
+            
+            Exemplo de uso:
+            GET /api/AbrigosTemporarios
+            
+            Observações:
+            - A lista é retornada em ordem alfabética por nome do abrigo
+            - Cada abrigo inclui links HATEOAS para ações relacionadas
+            </remarks>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AbrigosTemporariosController.GetByCity(System.String)">
+            <summary>
+            Retorna uma lista de abrigos temporários localizados em uma cidade específica.
+            </summary>
+            <remarks>
+            Este endpoint permite filtrar abrigos temporários por cidade/município.
+            
+            Características:
+            - Acesso público (não requer autenticação)
+            - Retorna apenas abrigos da cidade especificada
+            - Inclui informações detalhadas de cada abrigo
+            
+            Exemplo de uso:
+            GET /api/AbrigosTemporarios/cidade/municipio?nomeCidade=São Paulo
+            
+            Observações:
+            - A busca é case-insensitive (não diferencia maiúsculas de minúsculas)
+            - Retorna lista vazia se nenhum abrigo for encontrado na cidade
+            - Cada abrigo inclui links HATEOAS para ações relacionadas
+            </remarks>
+            <param name="nomeCidade">Nome da cidade ou município onde deseja buscar abrigos temporários</param>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AbrigosTemporariosController.Create(DisasterLink_API.DTOs.AbrigoTemporarioCreateDto)">
+            <summary>
+            Cadastra um novo abrigo temporário no sistema.
+            </summary>
+            <param name="dto">Objeto contendo os dados necessários para cadastro do abrigo temporário</param>
+            <remarks>
+            Este endpoint realiza duas operações principais:
+            1. Cadastro do abrigo temporário com todas as informações fornecidas
+            2. Geração automática de um alerta público contendo os dados do abrigo
+            
+            Características importantes:
+            - Requer autenticação JWT (usuário deve estar logado)
+            - O alerta gerado é armazenado no banco de dados
+            - O alerta será exibido no aplicativo mobile para todos os usuários
+            
+            Exemplo de uso:
+            POST /api/AbrigosTemporarios
+            
+            Observações:
+            - Todos os campos obrigatórios devem ser preenchidos
+            - O alerta é gerado automaticamente após o cadastro bem-sucedido
+            - O sistema valida os dados antes de processar o cadastro
+            </remarks>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AbrigosTemporariosController.GetById(System.Int32)">
+            <summary>
+            Busca e retorna os detalhes de um abrigo temporário específico através do seu identificador único.
+            </summary>
+            <remarks>
+            Este endpoint permite localizar um abrigo temporário específico no sistema.
+            
+            Características:
+            - Retorna todos os dados do abrigo se encontrado
+            - Retorna 404 (Not Found) se o abrigo não existir
+            - Inclui links HATEOAS para navegação relacionada
+            
+            Exemplo de uso:
+            GET /api/AbrigosTemporarios/{id}
+            
+            Observações:
+            - O ID deve ser um número inteiro válido
+            - A resposta inclui todos os detalhes do abrigo
+            </remarks>
+            <param name="id">ID do abrigo temporário</param>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AbrigosTemporariosController.Update(System.Int32,DisasterLink_API.DTOs.AbrigoTemporarioCreateDto)">
+            <summary>
+            Atualiza os dados de um abrigo temporário existente no sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite modificar as informações de um abrigo temporário específico.
+            
+            Características:
+            - Requer autenticação JWT para acesso
+            - Atualiza apenas os campos fornecidos no DTO
+            - Retorna 204 (No Content) em caso de sucesso
+            - Retorna 404 (Not Found) se o abrigo não existir
+            - Retorna 400 (Bad Request) se os dados forem inválidos
+            
+            Exemplo de uso:
+            PATCH /api/AbrigosTemporarios/{id}
+            
+            Observações:
+            - O ID deve ser um número inteiro válido
+            - Apenas os campos que deseja atualizar precisam ser enviados
+            - Campos não enviados manterão seus valores originais
+            </remarks>
+            <param name="id">Identificador único do abrigo temporário a ser atualizado</param>
+            <param name="dto">Objeto contendo os dados atualizados do abrigo temporário</param>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AbrigosTemporariosController.Delete(System.Int32)">
+            <summary>
+            Remove um abrigo temporário do sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite excluir permanentemente um abrigo temporário específico.
+            
+            Características:
+            - Requer autenticação JWT para acesso
+            - Remove permanentemente o abrigo do sistema
+            - Retorna 204 (No Content) em caso de sucesso
+            - Retorna 404 (Not Found) se o abrigo não existir
+            
+            Exemplo de uso:
+            DELETE /api/AbrigosTemporarios/{id}
+            
+            Observações:
+            - O ID deve ser um número inteiro válido
+            - A operação não pode ser desfeita
+            - Todos os dados relacionados ao abrigo serão removidos
+            </remarks>
+            <param name="id">Identificador único do abrigo temporário a ser removido</param>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AdminsController.Cadastrar(DisasterLink_API.DTOs.Admin.AdminCreateDto)">
+            <summary>
+            Cadastra um novo administrador no sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite criar um novo usuário com permissões administrativas.
+            
+            Características:
+            - Não requer vínculo com município
+            - Criação de conta administrativa completa
+            - Validação automática de dados
+            
+            Requisitos de senha:
+            - Mínimo de 6 caracteres
+            - Recomenda-se usar letras maiúsculas, minúsculas e números
+            
+            Exemplo de uso:
+            POST /api/admin/cadastrar
+            
+            Observações:
+            - Email deve ser único no sistema
+            - Todos os campos obrigatórios devem ser preenchidos
+            - A senha será criptografada automaticamente
+            </remarks>
+            <param name="adminCreateDto">Objeto contendo os dados do novo administrador</param>
+            <response code="201">Retorna os dados do administrador criado com sucesso</response>
+            <response code="400">Retornado quando:
+            - Email já está cadastrado
+            - Dados obrigatórios não foram preenchidos
+            - Formato de dados inválido
+            </response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AdminsController.Login(DisasterLink_API.DTOs.Admin.AdminLoginDto)">
+            <summary>
+            🔑 Realiza a autenticação de um administrador no sistema e obtém o token JWT.
+            </summary>
+            <remarks>
+            Este endpoint permite que administradores façam login no sistema.
+            
+            Características:
+            - Autenticação via email e senha
+            - Geração de token JWT para acesso seguro
+            - Validação automática das credenciais
+            
+            Requisitos:
+            - Email válido (deve conter "@")
+            - Senha com mínimo de 6 caracteres
+            
+            O que você receberá:
+            - Token JWT para autenticação
+            - Dados básicos do administrador
+            - Informações de acesso
+            
+            Exemplo de uso:
+            POST /api/admin/login
+            
+            Observações:
+            - O token JWT deve ser usado em requisições subsequentes
+            - O token expira após um período determinado
+            - Mantenha suas credenciais em segurança
+            </remarks>
+            <param name="loginDto">Objeto contendo email e senha do administrador</param>
+            <response code="200">Login realizado com sucesso. Retorna token JWT e dados do administrador</response>
+            <response code="400">Retornado quando:
+            - Email ou senha inválidos
+            - Credenciais não correspondem a um administrador
+            - Dados obrigatórios não foram preenchidos
+            </response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AdminsController.GetAdminPorId(System.Int32)">
+            <summary>
+            Busca um administrador específico pelo seu ID único.
+            </summary>
+            <remarks>
+            Este endpoint permite consultar os dados detalhados de um administrador específico do sistema.
+            
+            Características:
+            - Acesso restrito apenas para administradores autenticados
+            - Requer token JWT válido no header da requisição
+            - Retorna dados completos do administrador solicitado
+            
+            Como usar:
+            1. Faça uma requisição GET para /api/admins/{id}
+            2. Inclua o token JWT no header Authorization
+            3. Substitua {id} pelo ID do administrador desejado
+            
+            Observações:
+            - Apenas administradores podem acessar este endpoint
+            - O token JWT deve estar válido e não expirado
+            - O ID informado deve corresponder a um administrador existente
+            </remarks>
+            <param name="id">ID único do administrador que deseja consultar</param>
+            <response code="200">Retorna os dados completos do administrador encontrado</response>
+            <response code="401">Retornado quando o token JWT é inválido ou não está presente</response>
+            <response code="404">Retornado quando o ID informado não corresponde a nenhum administrador cadastrado</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AdminsController.ListarAdmins">
+            <summary>
+            Lista todos os administradores cadastrados no sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite visualizar todos os administradores registrados no sistema.
+            
+            Características:
+            - Acesso restrito apenas para administradores autenticados
+            - Requer token JWT válido no header da requisição
+            - Retorna lista completa de administradores com seus dados
+            
+            Como usar:
+            1. Faça uma requisição GET para /api/admins
+            2. Inclua o token JWT no header Authorization
+            
+            Observações:
+            - Apenas administradores podem acessar este endpoint
+            - O token JWT deve estar válido e não expirado
+            </remarks>
+            <response code="200">Retorna a lista completa de administradores cadastrados</response>
+            <response code="401">Retornado quando o token JWT é inválido ou não está presente</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AdminsController.EditarAdmin(System.Int32,DisasterLink_API.DTOs.Admin.AdminUpdateDto)">
+            <summary>
+            Atualiza os dados de um administrador no sistema. 
+            </summary>
+            <remarks>
+            Este endpoint permite atualizar informações de um administrador existente.
+            
+            O que pode ser atualizado:
+            - Nome do administrador
+            - Senha de acesso
+            
+            Restrições importantes:
+            - O email não pode ser alterado
+            - Para alterar a senha, é necessário fornecer a senha atual
+            - A nova senha deve ter no mínimo 6 caracteres
+            
+            Quem pode usar:
+            - O próprio administrador
+            - Outros administradores do sistema
+            
+            Como usar:
+            1. Faça uma requisição PATCH para /api/admins/{id}/editar
+            2. Inclua o token JWT no header Authorization
+            3. Envie os dados a serem atualizados no corpo da requisição
+            
+            Exemplo de dados para atualização:
+            {
+              "nome": "Novo Nome",
+              "senhaAtual": "senha123",
+              "novaSenha": "novaSenha456"
+            }
+            </remarks>
+            <param name="id">ID do administrador que será atualizado</param>
+            <param name="adminUpdateDto">Dados para atualização do administrador</param>
+            <response code="204">Atualização realizada com sucesso</response>
+            <response code="400">Dados inválidos (senha atual incorreta ou nova senha não atende aos requisitos)</response>
+            <response code="401">Usuário não autenticado</response>
+            <response code="403">Usuário não tem permissão para editar este administrador</response>
+            <response code="404">Administrador não encontrado no sistema</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AdminsController.DeletarAdmin(System.Int32)">
+            <summary>
+            Remove permanentemente um administrador do sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite a exclusão definitiva de um administrador do sistema.
+            
+            Características:
+            - Exclusão permanente (não é possível recuperar os dados)
+            - Requer autenticação via token JWT
+            - Acesso restrito apenas para outros administradores
+            
+            O que acontece:
+            - Todos os dados do administrador são removidos do banco de dados
+            - Histórico de atividades é mantido por questões de auditoria
+            - O administrador não poderá mais acessar o sistema com este ID
+            
+            Exemplo de uso:
+            - Faça uma requisição DELETE para /api/admins/{id}
+            
+            Observações:
+            - A exclusão é irreversível
+            - Recomenda-se fazer backup dos dados importantes antes
+            - Token JWT deve ser enviado no header da requisição
+            </remarks>
+            <param name="id">ID do administrador a ser excluído</param>
+            <response code="204">Exclusão realizada com sucesso</response>
+            <response code="401">Token JWT inválido ou não fornecido</response>
+            <response code="404">Administrador não encontrado no sistema</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AdminsController.ForgotPassword(DisasterLink_API.DTOs.Auth.AdminForgotPasswordDto)">
+            <summary>
+            Endpoint para redefinição de senha de administradores.
+            </summary>
+            <remarks>
+            Este endpoint permite que um administrador redefina sua senha quando esqueceu a senha atual.
+            
+            Como funciona:
+            1. O administrador fornece seu e-mail cadastrado
+            2. Informa a nova senha desejada
+            3. Confirma a nova senha
+            
+            Características:
+            - Não requer autenticação (acesso público)
+            - Valida se o e-mail existe no sistema
+            - Verifica se a senha e confirmação são iguais
+            - Aplica as regras de segurança para senhas
+            
+            Exemplo de uso:
+            POST /api/admins/esqueceu-senha
+            {
+                "email": "admin@exemplo.com",
+                "novaSenha": "Senha123!",
+                "confirmacaoSenha": "Senha123!"
+            }
+            
+            Observações:
+            - A senha deve seguir as políticas de segurança do sistema
+            - O e-mail deve estar cadastrado no sistema
+            - A confirmação deve ser idêntica à nova senha
+            </remarks>
+            <param name="dto">Objeto contendo e-mail, nova senha e confirmação</param>
+            <response code="200">Senha redefinida com sucesso</response>
+            <response code="400">Dados inválidos ou senhas não conferem</response>
+            <response code="404">E-mail não encontrado no sistema</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AlertasController.GetAtivos">
+            <summary>
+            Retorna todos os alertas ativos do sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite visualizar todos os alertas que estão atualmente ativos no sistema.
+            
+            Características:
+            - Requer autenticação JWT para acesso
+            - Acesso restrito apenas para administradores
+            - Retorna uma lista completa de alertas ativos
+            
+            Exemplo de uso:
+            GET /api/alertas/ativos
+            
+            🔒 Segurança: Este endpoint é protegido e requer autenticação JWT válida
+            </remarks>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AlertasController.GetByCity(System.String,System.Int32)">
+            <summary>
+            Busca alertas ativos para uma cidade específica, filtrando apenas aqueles que o usuário ainda não visualizou.
+            </summary>
+            <remarks>
+            Este endpoint permite consultar alertas ativos para uma cidade específica, filtrando
+            apenas aqueles que o usuário ainda não visualizou.
+            
+            Características:
+            - Acesso público (não requer autenticação)
+            - Filtra alertas por cidade
+            - Mostra apenas alertas não visualizados pelo usuário
+            - Requer ID do usuário válido
+            </remarks>
+            <param name="nomeCidade">Nome da cidade para filtrar os alertas</param>
+            <param name="idUsuario">ID do usuário para filtrar alertas não visualizados</param>
+            <response code="200">Retorna lista de alertas ativos não visualizados</response>
+            <response code="400">Retornado quando o ID do usuário é inválido</response>
+            <response code="404">Retornado quando o usuário não é encontrado</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AlertasController.GetByTipo(System.String)">
+            <summary>
+            Lista todos os alertas de um determinado tipo. 
+            </summary>
+            <remarks>
+            Este endpoint permite visualizar todos os alertas de um tipo específico no sistema.
+            
+            Características:
+            - Requer autenticação via token JWT
+            - Retorna todos os alertas do tipo solicitado
+            - Não considera histórico de visualizações dos usuários
+            
+            Diferenças em relação ao endpoint /alertas/cidade:
+            - Não filtra por cidade
+            - Não considera alertas já visualizados
+            - Retorna todos os alertas do tipo, independente do status
+            
+            Exemplo de uso:
+            GET /api/alertas/tipo/emergencia
+            
+            Observações:
+            - Token JWT deve ser enviado no header da requisição
+            - Retorna todos os alertas do tipo, mesmo que já visualizados
+            </remarks>
+            <param name="tipo">Tipo de alerta a ser consultado (ex: emergencia, informativo, etc)</param>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AlertasController.GetAlertaPorId(System.Int32)">
+            <summary>
+            Busca um alerta específico pelo seu identificador único (ID).
+            </summary>
+            <remarks>
+            Este endpoint permite consultar os detalhes completos de um alerta específico.
+            
+            Características:
+            - Acesso público (não requer autenticação)
+            - Retorna todos os dados do alerta
+            - Não registra visualização do alerta
+            - Não marca o alerta como descartado
+            
+            Exemplo de uso:
+            GET /api/alertas/123
+            
+            Observações:
+            - O ID do alerta deve ser um número válido
+            - Este endpoint apenas consulta, não modifica o estado do alerta
+            - Para marcar um alerta como visualizado ou descartado, use os endpoints específicos
+            </remarks>
+            <param name="id">Identificador único do alerta que deseja consultar</param>
+            <response code="200">Retorna os dados completos do alerta encontrado</response>
+            <response code="404">Retornado quando o ID informado não corresponde a nenhum alerta cadastrado</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AlertasController.DescartarAlertaPorUsuario(System.Int32,System.Int32)">
+            <summary>
+            Descarta um alerta específico para um usuário.
+            </summary>
+            <remarks>
+            Este endpoint permite que um usuário descarte (ocultar) um alerta específico.
+            
+            Características:
+            - Acesso público (não requer autenticação)
+            - Realiza uma exclusão lógica (o alerta continua no sistema, mas fica oculto para o usuário)
+            - O alerta descartado não aparecerá mais nas listagens do usuário
+            
+            Exemplo de uso:
+            DELETE /api/alertas/123?idUsuario=456
+            
+            Observações:
+            - O ID do alerta e do usuário são obrigatórios
+            - O ID do usuário deve ser um número positivo
+            - Esta operação é específica para um usuário (outros usuários ainda verão o alerta)
+            </remarks>
+            <param name="id">Identificador único do alerta que será descartado</param>
+            <param name="idUsuario">Identificador do usuário que está descartando o alerta</param>
+            <response code="204">Operação realizada com sucesso (alerta descartado ou já estava descartado)</response>
+            <response code="400">ID do usuário inválido ou não fornecido</response>
+            <response code="404">Alerta ou usuário não encontrado no sistema</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.AlertasController.DeleteTodosAlertas">
+            <summary>
+            Remove permanentemente todos os alertas do sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite a exclusão completa de todos os alertas do sistema.
+            
+            Características:
+            - Requer autenticação JWT
+            - Acesso restrito apenas para usuários com perfil de Administrador
+            - Operação irreversível (não é possível recuperar os alertas após a exclusão)
+            
+            Exemplo de uso:
+            DELETE /api/alertas/todos
+            
+            Observações:
+            - É altamente recomendável fazer backup dos dados antes de executar esta operação
+            - A operação retorna o número total de alertas que foram removidos
+            - Esta ação afeta todos os usuários do sistema
+            </remarks>
+            <response code="200">Operação concluída com sucesso. Retorna o número de alertas removidos.</response>
+            <response code="401">Usuário não autenticado. É necessário fornecer um token JWT válido.</response>
+            <response code="403">Usuário autenticado não possui permissão de Administrador.</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.PontosColetaController.GetAllPontosColeta(System.String,System.String)">
+            <summary>
+            Lista todos os pontos de coleta ativos no sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite buscar pontos de coleta de doações com filtros opcionais:
+            
+            1. Filtro por Cidade:
+               - Você pode especificar uma cidade para ver apenas os pontos de coleta daquela região
+               - Exemplo: São Paulo, Rio de Janeiro, etc.
+            
+            2. Filtro por Tipo:
+               - Você pode filtrar por tipo específico de doação
+               - Exemplos: "Arrecadação de alimentos", "Coleta de roupas", "Doação de medicamentos"
+            
+            Observações:
+            - Os filtros são opcionais - se não forem informados, retorna todos os pontos ativos
+            - Apenas pontos de coleta ativos são retornados
+            - Os resultados são ordenados por relevância
+            </remarks>
+            <param name="cidade">Nome da cidade para filtrar os pontos de coleta (opcional)</param>
+            <param name="tipo">Tipo específico de doação para filtrar os pontos (opcional)</param>
+            <response code="200">Retorna a lista de pontos de coleta encontrados com sucesso</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.PontosColetaController.GetAllPontosColetaSemFiltro">
+            <summary>
+            Lista todos os pontos de coleta ativos no sistema, sem aplicar nenhum filtro.
+            </summary>
+            <remarks>
+            Este endpoint retorna uma lista completa de todos os pontos de coleta ativos, 
+            independentemente de:
+            - Localização (cidade, estado, região)
+            - Tipo de doação aceita
+            - Outros critérios de filtragem
+            
+            Útil para:
+            - Visualização geral de todos os pontos disponíveis
+            - Análise completa da rede de pontos de coleta
+            - Situações onde não se deseja aplicar filtros específicos
+            </remarks>
+            <response code="200">Retorna a lista completa de todos os pontos de coleta ativos no sistema.</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.PontosColetaController.GetPontoColetaById(System.Int32)">
+            <summary>
+            Busca um ponto de coleta específico pelo ID.
+            </summary>
+            <remarks>
+            Este endpoint permite localizar um ponto de coleta específico através do seu ID único.
+            
+            Como funciona:
+            1. Forneça o ID do ponto de coleta desejado
+            2. O sistema retorna todos os detalhes do ponto encontrado
+            
+            O que você receberá:
+            - Informações completas do ponto de coleta
+            - Endereço e localização
+            - Tipos de doações aceitas
+            - Horário de funcionamento
+            - Contatos e outras informações relevantes
+            
+            Observações:
+            - Se o ID não existir, receberá um erro 404
+            - Este endpoint é público e não requer autenticação
+            </remarks>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.PontosColetaController.CreatePontoColeta(DisasterLink_API.DTOs.Create.PontoDeColetaDeDoacoesCreateDto)">
+            <summary>
+            Cria um novo ponto de coleta destinado ao usuario. 
+            </summary>
+            <remarks>
+            Instruções para criar um novo ponto de coleta:
+            
+            1. Campos Obrigatórios:
+               - Nome do ponto de coleta
+               - Endereço completo
+               - Tipo de doação aceita
+               - Data de início (formato: yyyy-MM-dd)
+               - Horário de funcionamento
+            
+            2. Campos Opcionais:
+               - imagemUrl: URL da imagem do ponto de coleta
+               - Descrição adicional
+               - Contatos para mais informações
+            
+            3. Comportamento do Sistema:
+               - Ao criar um ponto de coleta, um alerta público é gerado automaticamente
+               - O alerta permanecerá ativo até ser manualmente removido
+               - Cada usuário terá sua própria visualização do alerta
+            
+            4. Observações:
+               - Apenas administradores podem criar pontos de coleta
+               - É necessário estar autenticado com token JWT válido
+               - Todos os campos são validados antes da criação
+            </remarks>
+            <param name="pontoColetaDto">Dados para criação do ponto de coleta. 
+            </param>
+            <response code="201">Ponto de coleta criado com sucesso.</response>
+            <response code="400">Dados inválidos.</response>
+            <response code="401">Não autorizado.</response>
+            <response code="403">Acesso negado (não é Admin).</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.PontosColetaController.UpdatePontoColeta(System.Int32,DisasterLink_API.DTOs.Update.PontoDeColetaDeDoacoesUpdateDto)">
+            <summary>
+            Atualiza parcialmente um ponto de coleta existente. 
+            </summary>
+            <remarks>
+            Este endpoint permite atualizar informações específicas de um ponto de coleta.
+            
+            Como funciona:
+            1. Você só precisa enviar os campos que deseja atualizar
+            2. Os campos não enviados permanecerão com seus valores atuais
+            3. Para remover uma imagem, envie "imagemUrl": null
+            4. Campos opcionais podem ser omitidos
+            
+            Exemplo de uso:
+            Para atualizar apenas a descrição e o estoque, envie:
+            {
+              "descricao": "Nova descrição da coleta de cestas básicas para famílias afetadas e desabrigadas.",
+              "estoque": "500 unidades"
+            }
+            
+            Observações importantes:
+            - Apenas administradores podem fazer atualizações
+            - É necessário estar autenticado com token JWT válido
+            - A data de início não pode ser alterada após a criação
+            </remarks>
+            <param name="id">ID do ponto de coleta que será atualizado</param>
+            <param name="pontoDeColetaUpdateDto">Dados que serão atualizados</param>
+            <response code="200">Atualização realizada com sucesso</response>
+            <response code="400">Dados inválidos ou tentativa de alterar dataInicio</response>
+            <response code="401">Usuário não autenticado</response>
+            <response code="403">Usuário não tem permissão de administrador</response>
+            <response code="404">Ponto de coleta não encontrado</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.PontosColetaController.AddParticipacao(System.Int32,System.Int32,DisasterLink_API.DTOs.Create.ParticipacaoPontoColetaCreateDto)">
+            <summary>
+            Registra a participação de um usuário em um ponto de coleta de doações.
+            </summary>
+            <remarks>
+            Este endpoint permite que um usuário se registre para participar de um ponto de coleta de doações.
+            
+            Informações Geradas Automaticamente:
+            - ID da participação: número de 4 dígitos
+            - Data e hora: registrada no horário de Brasília
+            
+            Parâmetros da URL:
+            - pontoColetaId: ID do ponto de coleta onde deseja participar
+            - idUsuario: ID do usuário que está se registrando
+            
+            Dados Obrigatórios (no corpo da requisição):
+            - formaDeAjuda: como pretende ajudar
+            - telefone: número para contato
+            
+            Dados Opcionais (no corpo da requisição):
+            - mensagem: observações adicionais
+            - contato: nome de contato alternativo
+            </remarks>
+            <param name="pontoColetaId">ID do ponto de coleta (4 dígitos) onde registrar a participação (da URL).</param>
+            <param name="idUsuario">ID do usuário participante (4 dígitos) (da query string).</param>
+            <param name="dto">Dados da participação: forma de ajuda, mensagem (opcional), contato (opcional) e telefone.</param>
+            <response code="201">Participação registrada com sucesso. Retorna os dados da participação, incluindo ID e data/hora gerados.</response>
+            <response code="400">Erro de validação nos dados enviados (ex: campos obrigatórios ausentes no corpo, IDs inválidos).</response>
+            <response code="404">Ponto de coleta ou usuário não encontrados.</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.PontosColetaController.GetParticipantes(System.Int32)">
+            <summary>
+            Lista os participantes de um ponto de coleta.
+            </summary>
+            <remarks>
+            Este endpoint retorna uma lista completa de todos os usuários que estão participando
+            de um determinado ponto de coleta. Para cada participante, são retornadas informações
+            como:
+            - ID da participação
+            - ID do usuário participante
+            - Nome do usuário
+            - Data de início da participação
+            - Status da participação
+            - Outros detalhes relevantes
+            
+            A lista pode estar vazia se não houver participantes registrados.
+            </remarks>
+            <param name="id">ID do ponto de coleta.</param>
+            <response code="200">Retorna a lista de participantes.</response>
+            <response code="404">Ponto de coleta não encontrado.</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.PontosColetaController.DeletePontoColeta(System.Int32)">
+            <summary>
+            Remove permanentemente um ponto de coleta do sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite a exclusão completa de um ponto de coleta. 
+            
+            Importante:
+            - Apenas administradores podem executar esta operação
+            - A exclusão é permanente e não pode ser desfeita
+            - Todos os dados relacionados ao ponto de coleta serão removidos
+            
+            Requisitos:
+            - Autenticação JWT válida
+            - Perfil de administrador
+            </remarks>
+            <param name="id">Identificador único do ponto de coleta que será removido</param>
+            <response code="204">Operação concluída com sucesso. O ponto de coleta foi removido.</response>
+            <response code="401">Falha na autenticação. Token JWT inválido ou ausente.</response>
+            <response code="403">Acesso negado. Usuário não possui permissão de administrador.</response>
+            <response code="404">Ponto de coleta não encontrado no sistema.</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.RecomendacaoController.ObterRecomendacoes(DisasterLink_API.DTOs.SolicitacaoRecomendacaoDTO)">
+            <summary>
+            Busca pontos de coleta usando um modelo de Machine Learning feito com (ML.NET).
+            </summary>
+            <remarks>
+            Este serviço usa um modelo de Machine Learning (ML.NET) para encontrar os pontos de coleta mais adequados
+            baseado em dois critérios principais:
+            
+            1. Necessidade do item:
+               - Alimentos
+               - Roupas
+               - Kits de higiene
+               - Água potável
+               - Fraldas
+               - Medicamentos
+            
+            2. Localização do solicitante
+            
+            O sistema analisa esses dados e retorna uma LISTA de pontos de coleta recomendados,
+            cada um com uma pontuação (score) que indica o quão relevante é a recomendação.
+            
+            Exemplo de uso:
+            - Se você precisa de alimentos em São Paulo, o sistema vai retornar vários pontos de coleta
+              que têm alimentos disponíveis, ordenados do mais adequado para o menos adequado,
+              considerando fatores como proximidade e disponibilidade de estoque.
+            
+            Observação: O modelo de Machine Learning é treinado periodicamente com dados atualizados
+            para garantir recomendações precisas e relevantes.
+            </remarks>
+            <param name="solicitacao">Objeto contendo a necessidade e a localização do solicitante</param>
+            <returns>Lista de pontos de coleta recomendados, com suas respectivas pontuações de relevância</returns>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.RecomendacaoController.ObterMelhorRecomendacao(DisasterLink_API.DTOs.SolicitacaoRecomendacaoDTO)">
+            <summary>
+            Retorna o ponto de coleta mais adequado para atender uma necessidade específica.
+            </summary>
+            <remarks>
+            Como funciona:
+            
+            1. O sistema recebe:
+               - A necessidade do solicitante (ex: alimentos, roupas, medicamentos)
+               - A localização do solicitante (cidade)
+            
+            2. O sistema analisa:
+               - Disponibilidade de estoque nos pontos de coleta
+               - Proximidade geográfica
+               - Histórico de doações
+               - Avaliações dos pontos
+            
+            3. O resultado:
+               - Retorna APENAS o ponto de coleta mais adequado
+               - Inclui uma pontuação (score) que indica o quão relevante é a recomendação
+               - Quanto maior o score, melhor a recomendação
+            
+            Exemplo prático:
+            Se você precisa de alimentos em São Paulo, o sistema vai retornar o ponto de coleta
+            que tem a melhor combinação de: alimentos disponíveis + proximidade + boa avaliação.
+            </remarks>
+            <param name="solicitacao">Dados da solicitação (necessidade e localização)</param>
+            <returns>O ponto de coleta mais recomendado com sua pontuação de relevância</returns>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.RecomendacaoController.TreinarModelo">
+            <summary>
+            Retreina o modelo de Machine Learning (ML.NET) com dados atualizados. 
+            </summary>
+            <remarks>
+            Este endpoint permite atualizar o modelo de recomendação com os dados mais recentes:
+            
+            1. O que faz:
+               - Coleta todos os pontos de coleta atuais do banco de dados
+               - Processa os dados para treinar um novo modelo ML.NET
+               - Salva o modelo treinado como arquivo .zip
+            
+            2. Onde salva:
+               - Pasta: MLModels/
+               - Formato: arquivo .zip
+            
+            3. Importante:
+               - Apenas administradores podem executar esta operação
+               - O processo pode levar alguns minutos dependendo da quantidade de dados
+               - O modelo anterior é substituído pelo novo
+            </remarks>
+            <returns>Mensagem confirmando o sucesso do treinamento</returns>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.UsuariosController.Create(DisasterLink_API.DTOs.UsuarioCreateDto)">
+            <summary>
+            Cadastra um novo usuário comum (cidadão) na plataforma.
+            </summary>
+            <remarks>
+            Este endpoint permite o registro de novos usuários cidadãos no sistema.
+            
+            Informações importantes:
+            - O endereço completo é opcional
+            - O município pode ser informado posteriormente
+            - O email deve ser único no sistema
+            - A senha deve ter no mínimo 6 caracteres
+            
+            Campos obrigatórios:
+            - Nome completo
+            - Email válido
+            - Senha
+            - Telefone
+            
+            Campos opcionais:
+            - Município
+            - Bairro
+            - Logradouro
+            - Número
+            - Complemento
+            </remarks>
+            <param name="dto">Objeto contendo os dados do novo usuário</param>
+            <response code="201">Usuário cadastrado com sucesso. Retorna os dados do usuário criado.</response>
+            <response code="400">Erro na validação dos dados:
+            - Email já cadastrado
+            - Dados obrigatórios ausentes
+            - Formato de email inválido
+            - Senha muito curta</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.UsuariosController.Login(DisasterLink_API.DTOs.LoginDto)">
+            <summary>
+            Realiza o login de um usuário comum (cidadão) na plataforma.
+            </summary>
+            <remarks>
+            Este endpoint permite que usuários comuns (cidadãos) façam login no sistema.
+            
+            Requisitos para login:
+            - Email válido (deve conter "@")
+            - Senha com no mínimo 6 caracteres
+            
+            Observações importantes:
+            - Este login é específico para usuários comuns (cidadãos)
+            - Não gera token JWT pois as operações de usuário comum não requerem autenticação JWT
+            - Ideal para acesso básico às funcionalidades da plataforma
+            
+            O que acontece após o login:
+            - Verifica se as credenciais são válidas
+            - Retorna os dados básicos do usuário
+            - Indica se o login foi bem-sucedido
+            </remarks>
+            <param name="dto">Dados de login (email e senha)</param>
+            <response code="200">Login realizado com sucesso. Retorna os dados do usuário e confirmação de sucesso.</response> 
+            <response code="400">Erro na validação dos dados:
+            - Email inválido
+            - Senha muito curta
+            - Formato de email incorreto</response>
+            <response code="401">Falha na autenticação:
+            - Email não encontrado
+            - Senha incorreta</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.UsuariosController.GetById(System.Int32)">
+            <summary>
+            Consulta o perfil de um usuário específico através do seu ID.
+            </summary>
+            <remarks>
+            Este endpoint permite visualizar os dados públicos de qualquer usuário cadastrado na plataforma.
+            
+            Características:
+            - Acesso público (não requer autenticação)
+            - Retorna apenas informações públicas do perfil
+            - Dados sensíveis são ocultados automaticamente
+            
+            Exemplo de uso:
+            - Para ver o perfil do usuário com ID 123, faça uma requisição GET para /api/usuarios/123
+            
+            Observações:
+            - Este endpoint é útil para visualizar perfis de outros usuários
+            - Ideal para verificar informações de pontos de coleta ou doadores
+            </remarks>
+            <param name="id">ID único do usuário que deseja consultar</param>
+            <response code="200">Retorna os dados públicos do usuário encontrado</response>
+            <response code="404">Retornado quando o ID informado não corresponde a nenhum usuário cadastrado</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.UsuariosController.GetAll">
+            <summary>
+            Lista todos os usuários cadastrados no sistema.
+            </summary>
+            <remarks>
+            Este endpoint permite visualizar todos os usuários registrados na plataforma.
+            
+            Características:
+            - Acesso exclusivo para administradores
+            - Requer autenticação via token JWT
+            - Retorna lista completa de usuários
+            
+            Exemplo de uso:
+            - Faça uma requisição GET para /api/usuarios com token JWT de administrador
+            
+            Observações:
+            - Apenas usuários com perfil de administrador podem acessar
+            - Token JWT deve ser enviado no header da requisição
+            </remarks>
+            <response code="200">Retorna a lista completa de usuários cadastrados</response>
+            <response code="401">Retornado quando o token JWT é inválido ou não está presente</response>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.UsuariosController.Update(System.Int32,DisasterLink_API.DTOs.UsuarioUpdateDto)">
+            <summary>
+            Atualiza os dados cadastrais de um usuário existente.
+            </summary>
+            <remarks>
+            Este endpoint permite atualizar informações de um usuário já cadastrado no sistema.
+            
+            Características:
+            - Atualização parcial dos dados (PATCH)
+            - Requer autenticação via token JWT
+            - Apenas o próprio usuário ou administradores podem atualizar
+            
+            Dados que podem ser atualizados:
+            - Nome completo
+            - E-mail
+            - Telefone
+            - Endereço
+            
+            Exemplo de uso:
+            - Faça uma requisição PATCH para /api/usuarios/{id} com os dados a serem atualizados
+            
+            Observações:
+            - O ID do usuário não pode ser alterado
+            - A senha deve ser alterada através do endpoint específico de alteração de senha
+            - Token JWT deve ser enviado no header da requisição
+            </remarks>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>
+            Remove permanentemente um usuário do sistema através do seu ID. 
+            </summary>
+            <remarks>
+            Este endpoint permite a exclusão definitiva de um usuário do sistema.
+            
+            Características:
+            - Exclusão permanente (não é possível recuperar os dados)
+            - Requer autenticação via token JWT
+            - Apenas o próprio usuário ou administradores podem excluir
+            
+            O que acontece:
+            - Todos os dados do usuário são removidos do banco de dados
+            - Histórico de atividades é mantido por questões de auditoria
+            - O usuário não poderá mais acessar o sistema com este ID
+            
+            Exemplo de uso:
+            - Faça uma requisição DELETE para /api/usuarios/{id}
+            
+            Observações:
+            - A exclusão é irreversível
+            - Recomenda-se fazer backup dos dados importantes antes
+            - Token JWT deve ser enviado no header da requisição
+            </remarks>
+            <param name="id">ID do usuário a ser excluído.</param>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.UsuariosController.ForgotPassword(DisasterLink_API.DTOs.Auth.UsuarioForgotPasswordDto)">
+            <summary>
+            Endpoint para redefinição de senha do usuário.
+            </summary>
+            <remarks>
+            Este endpoint permite que um usuário redefina sua senha quando esqueceu a senha atual.
+            
+            Como funciona:
+            1. O usuário fornece seu e-mail cadastrado
+            2. Informa a nova senha desejada
+            3. Confirma a nova senha
+            
+            Validações realizadas:
+            - E-mail deve estar cadastrado no sistema
+            - Nova senha deve atender aos requisitos de segurança
+            - Confirmação de senha deve ser idêntica à nova senha
+            </remarks>
+            <param name="dto">Objeto contendo:
+            - Email: e-mail cadastrado do usuário
+            - NovaSenha: nova senha desejada
+            - ConfirmacaoSenha: confirmação da nova senha</param>
+            <returns>
+            - 200: Senha redefinida com sucesso
+            - 400: Dados inválidos ou senhas não conferem
+            - 404: E-mail não encontrado no sistema
+            </returns>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.UsuariosController.GoogleLogin(DisasterLink_API.DTOs.Auth.GoogleLoginRequestDto)">
+            <summary>
+            Busca usuários por localização geográfica. 
+            </summary>
+            <remarks>
+            Este endpoint permite encontrar usuários cadastrados em uma determinada região:
+            
+            Como funciona:
+            1. Você pode buscar por:
+               - Apenas cidade/município
+               - Apenas bairro
+               - Cidade/município E bairro juntos
+            
+            2. Exemplos de uso:
+               - Buscar todos os usuários de São Paulo
+               - Buscar usuários do bairro Jardins
+               - Buscar usuários do bairro Jardins em São Paulo
+            
+            3. Regras importantes:
+               - É necessário fornecer pelo menos um critério de busca
+               - Apenas administradores podem usar este recurso
+               - É necessário estar autenticado com token JWT válido
+            
+            4. O que você recebe:
+               - Lista de usuários que correspondem aos critérios
+               - Dados básicos de cada usuário encontrado
+            </remarks>
+            <param name="cidadeMunicipio">Nome da cidade ou município (opcional)</param>
+            <param name="bairro">Nome do bairro (opcional)</param>
+            <returns>
+            - 200: Lista de usuários encontrados
+            - 400: Nenhum critério de busca informado
+            - 401: Não autorizado (token inválido)
+            - 404: Nenhum usuário encontrado
+            </returns>
+        </member>
+        <member name="M:DisasterLink_API.Controllers.UsuariosController.GetByLocalidade(System.String,System.String)">
+            <summary>
+            Realiza login de usuário através do Google OAuth. 
+            </summary>
+            <remarks>
+            Este endpoint permite que usuários façam login no sistema usando suas credenciais do Google:
+            
+            1. Como funciona:
+               - Usuário fornece o token de autenticação do Google
+               - Sistema valida o token com o Google
+               - Se válido, cria/atualiza o usuário no sistema
+               - Retorna token JWT para autenticação
+            
+            2. Fluxo de autenticação:
+               - Cliente obtém token do Google
+               - Envia token para este endpoint
+               - Recebe token JWT para uso no sistema
+            
+            3. Importante:
+               - Token do Google deve ser válido
+               - Usuário é criado automaticamente se não existir
+               - Dados básicos são sincronizados do Google
+            </remarks>
+            <param name="dto">Token de autenticação do Google</param>
+            <returns>
+            - 200: Login realizado com sucesso
+            - 400: Token inválido ou erro na autenticação
+            </returns>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Admin.AdminDto.Data">
+            <summary>
+            Data de criação do administrador (formato: dd/MM/yyyy HH:mm, Horário de Brasília).
+            Esta propriedade será serializada como "data" no JSON.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.Admin.AdminLoginDto">
+            <summary>
+            DTO para login de administrador.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Admin.AdminLoginDto.Email">
+            <summary>
+            Email do administrador. O email precisa conter o caractere '@'.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Admin.AdminLoginDto.Senha">
+            <summary>
+            Senha do administrador. Senha deve conter no mínimo 6 caracteres.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.Admin.AdminCreateDto">
+            <summary>
+            DTO para cadastro de novo administrador.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Admin.AdminCreateDto.Nome">
+            <summary>
+            Nome completo do administrador.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Admin.AdminCreateDto.Email">
+            <summary>
+            Email do administrador. Email deve conter '@'.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Admin.AdminCreateDto.Senha">
+            <summary>
+            Senha de acesso. Senha deve conter no mínimo 6 caracteres.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Admin.AdminCreateDto.ConfirmacaoSenha">
+            <summary>
+            Confirmação da senha. Confirmação de senha é obrigatória e deve ser idêntica à senha informada.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.AlertaDto">
+            <summary>
+            DTO de saída de alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.Id">
+            <summary>
+            Identificador do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.Tipo">
+            <summary>
+            Tipo de alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.Titulo">
+            <summary>
+            Título do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.Descricao">
+            <summary>
+            Descrição do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.Cidade">
+            <summary>
+            Cidade alvo do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.Bairro">
+            <summary>
+            Bairro do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.Logradouro">
+            <summary>
+            Logradouro do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.DataHora">
+            <summary>
+            Data e hora de criação
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.OrigemId">
+            <summary>
+            ID da entidade que originou o alerta (opcional).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaDto.TipoOrigem">
+            <summary>
+            Tipo da entidade que originou o alerta (opcional).
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.LinkDto">
+            <summary>
+            Representa um link HATEOAS
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.LoginDto">
+            <summary>
+            DTO para login de usuário ou administrador.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.LoginDto.Email">
+            <summary>
+            Email do usuário ou administrador. O email precisa conter o caractere '@'.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.LoginDto.Senha">
+            <summary>
+            Senha do usuário ou administrador. Senha deve conter no mínimo 6 caracteres.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.SolicitacaoRecomendacaoDTO">
+            <summary>
+            DTO para solicitação de recomendação de pontos de coleta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.SolicitacaoRecomendacaoDTO.Necessidade">
+            <summary>
+            Necessidade do usuário (ex: "alimentos", "fraldas", "medicamentos")
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.SolicitacaoRecomendacaoDTO.Cidade">
+            <summary>
+            Cidade para filtrar os resultados
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO">
+            <summary>
+            DTO para retorno de pontos de coleta recomendados
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO.PontoId">
+            <summary>
+            Identificador do ponto de coleta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO.Tipo">
+            <summary>
+            Tipo do ponto de coleta (ex: "Alimentos", "Medicamentos")
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO.Descricao">
+            <summary>
+            Descrição do ponto de coleta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO.Cidade">
+            <summary>
+            Cidade onde o ponto de coleta está localizado
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO.Bairro">
+            <summary>
+            Bairro onde o ponto de coleta está localizado
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO.Logradouro">
+            <summary>
+            Endereço completo do ponto de coleta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO.Estoque">
+            <summary>
+            Itens disponíveis no estoque
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO.ImagemUrls">
+            <summary>
+            Lista de URLs das imagens do ponto de coleta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.PontoColetaRecomendadoDTO.Score">
+            <summary>
+            Pontuação de relevância para a necessidade do usuário (quanto maior, mais relevante)
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.Resource`1">
+            <summary>
+            Representa um recurso enriquecido com links HATEOAS
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.UsuarioDto">
+            <summary>
+            DTO de saída de usuário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioDto.Id">
+            <summary>
+            Identificador do usuário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioDto.Nome">
+            <summary>
+            Nome completo
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioDto.Email">
+            <summary>
+            Email do usuário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioDto.Pais">
+            <summary>
+            País do usuário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioDto.Estado">
+            <summary>
+            Estado do usuário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioDto.Municipio">
+            <summary>
+            Cidade/Município do usuário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioDto.Bairro">
+            <summary>
+            Bairro do usuário
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.AbrigoTemporarioCreateDto">
+            <summary>
+            DTO para criação de novo Abrigo Temporário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioCreateDto.Nome">
+            <summary>
+            Nome do Abrigo Temporário
+            Ex: "Abrigo Comunitário Esperança"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioCreateDto.Descricao">
+            <summary>
+            Descrição detalhada do abrigo
+            Ex: "Abrigo provisório montado na escola municipal. Oferece alimentação e pernoite."
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioCreateDto.CidadeMunicipio">
+            <summary>
+            Cidade/Município onde o abrigo está localizado
+            Ex: "Nova Esperança"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioCreateDto.Bairro">
+            <summary>
+            Bairro onde o abrigo está localizado
+            Ex: "Feliz"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioCreateDto.Logradouro">
+            <summary>
+            Logradouro (Rua, Avenida, etc.) e número do abrigo
+            Ex: "Rua da Escola, 500"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioCreateDto.Capacidade">
+            <summary>
+            Capacidade total de pessoas do abrigo
+            Ex: 50
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioCreateDto.ImagemUrls">
+            <summary>
+            Lista de URLs das imagens do abrigo (opcional, máximo de 5 URLs)
+            Cada URL deve ser válida
+            Ex: ["https://storage.disasterlink.com.br/abrigos/abrigo_esperanca_1.jpg", "https://storage.disasterlink.com.br/abrigos/abrigo_esperanca_2.jpg"]
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.AlertaCreateDto">
+            <summary>
+            DTO para criação de novo alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaCreateDto.Tipo">
+            <summary>
+            Tipo de alerta (enchente, deslizamento, etc.)
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaCreateDto.Titulo">
+            <summary>
+            Título do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaCreateDto.Descricao">
+            <summary>
+            Descrição detalhada do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaCreateDto.Cidade">
+            <summary>
+            Cidade alvo do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaCreateDto.Bairro">
+            <summary>
+            Bairro do alerta (opcional)
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaCreateDto.Logradouro">
+            <summary>
+            Logradouro do alerta (opcional)
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaCreateDto.OrigemId">
+            <summary>
+            ID da entidade que originou o alerta (opcional, usado internamente).
+            Se não fornecido, será assumido como Manual.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AlertaCreateDto.TipoOrigem">
+            <summary>
+            Tipo da entidade que originou o alerta (opcional, usado internamente).
+            Se não fornecido, será assumido como Manual.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.Create.ParticipacaoPontoColetaCreateDto">
+            <summary>
+            DTO com dados para registrar a participação de um usuário em um ponto de coleta.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.ParticipacaoPontoColetaCreateDto.FormaDeAjuda">
+            <summary>
+            Forma de ajuda que será oferecida (ex: "Doação de alimentos", "Trabalho voluntário").
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.ParticipacaoPontoColetaCreateDto.Mensagem">
+            <summary>
+            Mensagem adicional do participante (opcional).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.ParticipacaoPontoColetaCreateDto.Contato">
+            <summary>
+            Contato (email) do participante (opcional).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.ParticipacaoPontoColetaCreateDto.Telefone">
+            <summary>
+            Telefone de contato do participante (obrigatório).
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.Create.PontoDeColetaDeDoacoesCreateDto">
+            <summary>
+            DTO para criação de novo Ponto de Coleta de Doações.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.PontoDeColetaDeDoacoesCreateDto.Tipo">
+            <summary>
+            Tipo/Propósito do ponto de coleta. Ex: "Arrecadação de alimentos"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.PontoDeColetaDeDoacoesCreateDto.Descricao">
+            <summary>
+            Descrição detalhada do ponto de coleta.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.PontoDeColetaDeDoacoesCreateDto.Cidade">
+            <summary>
+            Cidade onde o ponto de coleta está localizado.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.PontoDeColetaDeDoacoesCreateDto.Bairro">
+            <summary>
+            Bairro onde o ponto de coleta está localizado.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.PontoDeColetaDeDoacoesCreateDto.Logradouro">
+            <summary>
+            Logradouro (Rua, Avenida, etc.) e número do ponto de coleta.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.PontoDeColetaDeDoacoesCreateDto.ImagemUrls">
+            <summary>
+            Lista de URLs das imagens do ponto de coleta (opcional, máximo de 5 URLs).
+            Cada URL deve ser válida.
+            Ex: ["https://storage.disasterlink.com.br/pontos/ponto_coleta_1.jpg"]
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Create.PontoDeColetaDeDoacoesCreateDto.Estoque">
+            <summary>
+            Estoque/Meta do ponto de coleta (ex: "300 unidades", "1000 litros de água", "arroz, feijão"). Opcional.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.UsuarioCreateDto">
+            <summary>
+            DTO para cadastro de novo usuário.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioCreateDto.Nome">
+            <summary>
+            Nome completo do usuário.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioCreateDto.Email">
+            <summary>
+            Email do usuário. O campo email precisa conter o caractere '@'.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioCreateDto.Senha">
+            <summary>
+            Senha de acesso. Senha deve conter no mínimo 6 caracteres.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioCreateDto.Pais">
+            <summary>
+            País do usuário (opcional).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioCreateDto.Estado">
+            <summary>
+            Estado do usuário (opcional).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioCreateDto.CidadeMunicipio">
+            <summary>
+            Cidade/Município do usuário (opcional).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioCreateDto.Bairro">
+            <summary>
+            Bairro do usuário (opcional).
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.AbrigoTemporarioDto">
+            <summary>
+            DTO para visualização de Abrigo Temporário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.Id">
+            <summary>
+            ID do Abrigo Temporário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.Nome">
+            <summary>
+            Nome do Abrigo Temporário
+            Ex: "Abrigo Comunitário Esperança"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.Descricao">
+            <summary>
+            Descrição detalhada do abrigo
+            Ex: "Abrigo provisório montado na escola municipal. Oferece alimentação e pernoite."
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.CidadeMunicipio">
+            <summary>
+            Cidade/Município onde o abrigo está localizado
+            Ex: "Nova Esperança"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.Bairro">
+            <summary>
+            Bairro onde o abrigo está localizado
+            Ex: "Feliz"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.Logradouro">
+            <summary>
+            Logradouro (Rua, Avenida, etc.) e número do abrigo
+            Ex: "Rua da Escola, 500"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.Capacidade">
+            <summary>
+            Capacidade total de pessoas do abrigo
+            Ex: 50
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.ImagemUrls">
+            <summary>
+            Lista de URLs das imagens do abrigo (pode ser nulo ou vazio)
+            Ex: ["https://storage.disasterlink.com.br/abrigos/abrigo_esperanca_1.jpg"]
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.DataCadastro">
+            <summary>
+            Data de cadastro do abrigo no sistema. Formato: yyyy-MM-ddTHH:mm:ss
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.AbrigoTemporarioDto.Status">
+            <summary>
+            Status atual do abrigo (e.g., ativo, lotado, inativo)
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.LoginResponseDto">
+            <summary>
+            DTO de resposta de login
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.LoginResponseDto.Id">
+            <summary>
+            Identificador do usuário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.LoginResponseDto.Nome">
+            <summary>
+            Nome do usuário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.LoginResponseDto.Token">
+            <summary>
+            Placeholder para token (JWT a implementar)
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.Response.ParticipacaoPontoColetaDto">
+            <summary>
+            DTO para representar uma participação em Ponto de Coleta de Doações.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.Response.PontoDeColetaDeDoacoesDto">
+            <summary>
+            DTO para representar um Ponto de Coleta de Doações.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.Update.PontoDeColetaDeDoacoesUpdateDto">
+            <summary>
+            DTO para atualização de um Ponto de Coleta de Doações.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Update.PontoDeColetaDeDoacoesUpdateDto.Tipo">
+            <summary>
+            Novo tipo/propósito do ponto de coleta. Ex: "Arrecadação de roupas"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Update.PontoDeColetaDeDoacoesUpdateDto.Descricao">
+            <summary>
+            Nova descrição detalhada do ponto de coleta.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Update.PontoDeColetaDeDoacoesUpdateDto.Cidade">
+            <summary>
+            Nova cidade onde o ponto de coleta está localizado.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Update.PontoDeColetaDeDoacoesUpdateDto.Bairro">
+            <summary>
+            Novo bairro onde o ponto de coleta está localizado.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Update.PontoDeColetaDeDoacoesUpdateDto.Logradouro">
+            <summary>
+            Novo logradouro (Rua, Avenida, etc.) e número do ponto de coleta.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Update.PontoDeColetaDeDoacoesUpdateDto.ImagemUrls">
+            <summary>
+            Nova lista de URLs das imagens do ponto de coleta (opcional, máximo de 5 URLs).
+            Enviar uma lista vazia para remover todas as imagens ou null para não alterar.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.Update.PontoDeColetaDeDoacoesUpdateDto.Estoque">
+            <summary>
+            Novo estoque/meta do ponto de coleta (ex: "300 unidades", "1000 litros de água"). Opcional.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.DTOs.UsuarioUpdateDto">
+            <summary>
+            DTO para atualização de perfil de usuário
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioUpdateDto.Nome">
+            <summary>
+            Nome completo
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioUpdateDto.SenhaAtual">
+            <summary>
+            Senha atual do usuário (obrigatória se for alterar a senha)
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioUpdateDto.NovaSenha">
+            <summary>
+            Nova senha (deve atender aos critérios de complexidade se fornecida)
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.DTOs.UsuarioUpdateDto.Municipio">
+            <summary>
+            Município do usuário (opcional para atualização)
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Entities.TipoOrigemAlerta">
+            <summary>
+            Define o tipo da entidade que originou o alerta.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Entities.Alerta">
+            <summary>
+            Representa um alerta do sistema
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.Alerta.Tipo">
+            <summary>
+            Tipo de alerta (enchente, deslizamento, etc.)
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.Alerta.Titulo">
+            <summary>
+            Título do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.Alerta.Descricao">
+            <summary>
+            Descrição detalhada do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.Alerta.Cidade">
+            <summary>
+            Cidade alvo do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.Alerta.Bairro">
+            <summary>
+            Bairro do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.Alerta.Logradouro">
+            <summary>
+            Logradouro do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.Alerta.DataHora">
+            <summary>
+            Data e hora de criação do alerta
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.Alerta.OrigemId">
+            <summary>
+            ID da entidade que originou o alerta (opcional).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.Alerta.TipoOrigem">
+            <summary>
+            Tipo da entidade que originou o alerta (opcional).
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Entities.ParticipacaoPontoColeta">
+            <summary>
+            Representa a participação de um usuário em um ponto de coleta de doações.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.ParticipacaoPontoColeta.PontoColetaId">
+            <summary>
+            ID do Ponto de Coleta ao qual esta participação está vinculada.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.ParticipacaoPontoColeta.IdUsuario">
+            <summary>
+            ID do Usuário que está participando.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.ParticipacaoPontoColeta.FormaDeAjuda">
+            <summary>
+            Forma de ajuda oferecida (ex: "Doação de alimentos", "Trabalho voluntário").
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.ParticipacaoPontoColeta.Mensagem">
+            <summary>
+            Mensagem adicional do participante (opcional).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.ParticipacaoPontoColeta.Contato">
+            <summary>
+            Contato (email) do participante (opcional).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.ParticipacaoPontoColeta.Telefone">
+            <summary>
+            Telefone de contato do participante (obrigatório).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.ParticipacaoPontoColeta.DataHora">
+            <summary>
+            Data e hora do registro da participação (Horário de Brasília GMT-3).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.ParticipacaoPontoColeta.PontoDeColetaDeDoacoes">
+            <summary>
+            Ponto de Coleta de Doações relacionado.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Entities.PontoDeColetaDeDoacoes">
+            <summary>
+            Representa um ponto de coleta de doações.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.PontoDeColetaDeDoacoes.Tipo">
+            <summary>
+            Tipo/Propósito do ponto de coleta. Ex: "Arrecadação de roupas", "Ponto de água potável"
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.PontoDeColetaDeDoacoes.Descricao">
+            <summary>
+            Descrição detalhada do ponto de coleta.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.PontoDeColetaDeDoacoes.DataInicio">
+            <summary>
+            Data de início da coleta (formato yyyy-MM-dd no payload).
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.PontoDeColetaDeDoacoes.Cidade">
+            <summary>
+            Cidade onde o ponto de coleta está localizado.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.PontoDeColetaDeDoacoes.Bairro">
+            <summary>
+            Bairro onde o ponto de coleta está localizado.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.PontoDeColetaDeDoacoes.Logradouro">
+            <summary>
+            Logradouro (Rua, Avenida, etc.) e número do ponto de coleta.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.PontoDeColetaDeDoacoes.Estoque">
+            <summary>
+            Estoque/Meta do ponto de coleta (ex: "300 unidades", "1000 litros de água"). Opcional.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.PontoDeColetaDeDoacoes.ImagemUrls">
+            <summary>
+            Lista de URLs das imagens do ponto de coleta, armazenada como string JSON.
+            </summary>
+        </member>
+        <member name="P:DisasterLink_API.Entities.PontoDeColetaDeDoacoes.Participacoes">
+            <summary>
+            Participações no ponto de coleta.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Interfaces.Repositories.IAbrigoTemporarioRepository">
+            <summary>
+            Contrato para acesso a dados de Abrigos Temporários
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Interfaces.Repositories.IAlertaRepository">
+            <summary>
+            Contrato para acesso a dados de Alertas
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Interfaces.Repositories.IUsuarioRepository">
+            <summary>
+            Contrato para acesso a dados de usuários
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Interfaces.Services.IAbrigoTemporarioService">
+            <summary>
+            Contrato de lógica de negócio para Abrigos Temporários
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Interfaces.Services.IAlertaService">
+            <summary>
+            Contrato de lógica de negócio para Alertas
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Interfaces.Services.IUsuarioService">
+            <summary>
+            Contrato de lógica de negócio para usuários
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:DisasterLink_API.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisasterLink_API.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisasterLink_API.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:DisasterLink_API.Migrations.AddAbrigosTemporariosTableApiId">
+            <inheritdoc />
+        </member>
+        <member name="M:DisasterLink_API.Migrations.AddAbrigosTemporariosTableApiId.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisasterLink_API.Migrations.AddAbrigosTemporariosTableApiId.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DisasterLink_API.Migrations.AddAbrigosTemporariosTableApiId.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:DisasterLink_API.Repositories.AbrigoTemporarioRepository">
+            <summary>
+            Implementação de IAbrigoTemporarioRepository usando EF Core
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Repositories.AlertaRepository">
+            <summary>
+            Implementação de IAlertaRepository usando EF Core
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Repositories.UsuarioRepository">
+            <summary>
+            Implementação de IUsuarioRepository usando EF Core
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Services.AbrigoTemporarioService">
+            <summary>
+            Implementa lógica de negócio para Abrigos Temporários
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Services.AlertaService">
+            <summary>
+            Implementa lógica de negócio para Alertas
+            </summary>
+        </member>
+        <member name="M:DisasterLink_API.Services.AlertaService.CriarAlertaAutomaticoDeAbrigoAsync(DisasterLink_API.DTOs.AbrigoTemporarioDto)">
+            <summary>
+            Cria automaticamente um alerta quando um abrigo temporário é criado
+            </summary>
+        </member>
+        <member name="M:DisasterLink_API.Services.AlertaService.CriarAlertaAutomaticoDePontoColetaAsync(DisasterLink_API.DTOs.Response.PontoDeColetaDeDoacoesDto)">
+            <summary>
+            Cria automaticamente um alerta quando um ponto de coleta é criado
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.Services.UsuarioService">
+            <summary>
+            Implementa lógica de negócio para usuários
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.AbrigoTemporarioPatchDtoExample">
+            <summary>
+            Exemplo de request para atualização parcial (PATCH) de um Abrigo Temporário.
+            Mostra a alteração de apenas alguns campos.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.AdminCreateDtoExample">
+            <summary>
+            Exemplo de request para criação de administrador
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.AdminForgotPasswordDtoExample">
+            <summary>
+            Exemplo de request para o endpoint "Esqueceu Senha" do Admin.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.AdminUpdateDtoExample">
+            <summary>
+            Exemplo de request para atualização de dados do administrador.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.AlertaCreateDtoExample">
+            <summary>
+            Exemplo de request para criação de alerta
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.LoginDtoExample">
+            <summary>
+            Exemplo de request para login de usuário
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.ParticipacaoPontoColetaCreateDtoExample">
+            <summary>
+            Exemplo de request para participação em Ponto de Coleta de Doações
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.PontoDeColetaDeDoacoesCreateDtoExample">
+            <summary>
+            Exemplo de request para criação de um Ponto de Coleta de Doações.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.UsuarioCreateDtoExample">
+            <summary>
+            Exemplo de request para criação de usuário
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.UsuarioForgotPasswordDtoExample">
+            <summary>
+            Exemplo de request para o endpoint "Esqueceu Senha" do Usuário.
+            </summary>
+        </member>
+        <member name="T:DisasterLink_API.SwaggerExamples.UsuarioUpdateDtoExample">
+            <summary>
+            Exemplo de request para atualização de dados do usuário.
+            </summary>
+        </member>
+    </members>
+</doc>

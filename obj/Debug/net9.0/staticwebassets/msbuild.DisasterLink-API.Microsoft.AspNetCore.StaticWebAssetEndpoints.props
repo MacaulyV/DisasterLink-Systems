@@ -1,0 +1,40 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/DisasterLink-API/DisasterLink-Systems-Logo.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\DisasterLink-Systems-Logo.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-76IqEpm58tBIf5LpLMQKfHVz1dty1S6X\u002BdQ9/fHGz6I="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"113939"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002276IqEpm58tBIf5LpLMQKfHVz1dty1S6X\u002BdQ9/fHGz6I=\u0022"},{"Name":"Last-Modified","Value":"Thu, 29 May 2025 01:45:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DisasterLink-API/DisasterLink-Systems-Logo.vgpcbnf8f4.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\DisasterLink-Systems-Logo.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vgpcbnf8f4"},{"Name":"integrity","Value":"sha256-76IqEpm58tBIf5LpLMQKfHVz1dty1S6X\u002BdQ9/fHGz6I="},{"Name":"label","Value":"_content/DisasterLink-API/DisasterLink-Systems-Logo.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"113939"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002276IqEpm58tBIf5LpLMQKfHVz1dty1S6X\u002BdQ9/fHGz6I=\u0022"},{"Name":"Last-Modified","Value":"Thu, 29 May 2025 01:45:28 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DisasterLink-API/swagger-custom.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-custom.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0T2VYqAYe8Mrkh\u002B7XIgGa2GSsngHkFWYpxB0tyNMP8k="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"20097"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00220T2VYqAYe8Mrkh\u002B7XIgGa2GSsngHkFWYpxB0tyNMP8k=\u0022"},{"Name":"Last-Modified","Value":"Thu, 29 May 2025 17:50:42 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DisasterLink-API/swagger-custom.x8dvpwfrfe.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-custom.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x8dvpwfrfe"},{"Name":"integrity","Value":"sha256-0T2VYqAYe8Mrkh\u002B7XIgGa2GSsngHkFWYpxB0tyNMP8k="},{"Name":"label","Value":"_content/DisasterLink-API/swagger-custom.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"20097"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00220T2VYqAYe8Mrkh\u002B7XIgGa2GSsngHkFWYpxB0tyNMP8k=\u0022"},{"Name":"Last-Modified","Value":"Thu, 29 May 2025 17:50:42 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DisasterLink-API/swagger-ui.1fg9j3rrd7.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-ui.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1fg9j3rrd7"},{"Name":"integrity","Value":"sha256-XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA="},{"Name":"label","Value":"_content/DisasterLink-API/swagger-ui.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"10150"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 30 May 2025 20:20:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DisasterLink-API/swagger-ui.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-ui.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"10150"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XQperbhbjg1xkIVvp7uIZfoZ1xrt5E11KqJKYW3cOEA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 30 May 2025 20:20:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>
