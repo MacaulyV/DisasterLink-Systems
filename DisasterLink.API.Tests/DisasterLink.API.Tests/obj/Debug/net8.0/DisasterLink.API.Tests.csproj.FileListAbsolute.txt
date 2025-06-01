@@ -94,3 +94,4 @@ C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink.AP
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink.API.Tests\DisasterLink.API.Tests\obj\Debug\net8.0\DisasterLink.API.Tests.pdb
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink.API.Tests\DisasterLink.API.Tests\obj\Debug\net8.0\DisasterLink.API.Tests.genruntimeconfig.cache
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink.API.Tests\DisasterLink.API.Tests\obj\Debug\net8.0\ref\DisasterLink.API.Tests.dll
+C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink.API.Tests\DisasterLink.API.Tests\obj\Debug\net8.0\DisasterLink.API.Tests.sourcelink.json

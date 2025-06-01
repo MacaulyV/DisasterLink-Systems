@@ -15,14 +15,14 @@
     <StaticWebAssetEndpoint Include="_content/DisasterLink-API/swagger-custom.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-custom.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0T2VYqAYe8Mrkh\u002B7XIgGa2GSsngHkFWYpxB0tyNMP8k="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"20097"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00220T2VYqAYe8Mrkh\u002B7XIgGa2GSsngHkFWYpxB0tyNMP8k=\u0022"},{"Name":"Last-Modified","Value":"Thu, 29 May 2025 17:50:42 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"19955"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 20:29:47 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/DisasterLink-API/swagger-custom.x8dvpwfrfe.js">
+    <StaticWebAssetEndpoint Include="_content/DisasterLink-API/swagger-custom.wgjclso5ec.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-custom.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x8dvpwfrfe"},{"Name":"integrity","Value":"sha256-0T2VYqAYe8Mrkh\u002B7XIgGa2GSsngHkFWYpxB0tyNMP8k="},{"Name":"label","Value":"_content/DisasterLink-API/swagger-custom.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"20097"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u00220T2VYqAYe8Mrkh\u002B7XIgGa2GSsngHkFWYpxB0tyNMP8k=\u0022"},{"Name":"Last-Modified","Value":"Thu, 29 May 2025 17:50:42 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wgjclso5ec"},{"Name":"integrity","Value":"sha256-kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4="},{"Name":"label","Value":"_content/DisasterLink-API/swagger-custom.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"19955"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 20:29:47 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/DisasterLink-API/swagger-ui.1fg9j3rrd7.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-ui.css'))</AssetFile>

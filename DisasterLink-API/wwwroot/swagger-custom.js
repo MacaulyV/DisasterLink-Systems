@@ -90,7 +90,7 @@
                 infoContainer.appendChild(descElement);
             }
         }
-        descElement.textContent = 'Bem-vindo à API DisasterLink! Esta é a interface central da API para a solução DisasterLink Systems, um ecossistema colaborativo projetado para mapear, monitorar e responder rapidamente a desastres naturais. Através desta API, aplicativos móveis e plataformas administrativas podem gerenciar ocorrências (relatos de cidadãos), disparar alertas, organizar campanhas de ajuda e muito mais, visando unir cidadãos, autoridades e tecnologia para uma resposta eficiente a emergências.';
+        descElement.textContent = 'DisasterLink Systems** é uma API RESTful desenvolvida em .NET, centralizando toda a lógica operacional de mapeamento, monitoramento e resposta a desastres naturais em cidades brasileiras. A plataforma integra cidadãos e autoridades a um ecossistema digital colaborativo, otimizando a comunicação e a tomada de decisões durante emergências.';
         
         let linksContainer = infoContainer.querySelector('.api-links');
         if (!linksContainer) { 

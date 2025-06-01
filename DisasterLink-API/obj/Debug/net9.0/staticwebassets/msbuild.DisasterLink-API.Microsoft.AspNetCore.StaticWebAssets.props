@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>x8dvpwfrfe</Fingerprint>
-      <Integrity>0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=</Integrity>
+      <Fingerprint>wgjclso5ec</Fingerprint>
+      <Integrity>kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-custom.js'))</OriginalItemSpec>

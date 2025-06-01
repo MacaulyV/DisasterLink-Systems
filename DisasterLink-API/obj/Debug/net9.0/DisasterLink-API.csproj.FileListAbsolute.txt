@@ -189,7 +189,6 @@ C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-AP
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\scopedcss\bundle\DisasterLink-API.styles.css
-C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\compressed\6hw87bnyt7-x8dvpwfrfe.gz
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\compressed\6z0kqpfs5z-1fg9j3rrd7.gz
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\staticwebassets.development.json
@@ -207,3 +206,5 @@ C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-AP
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\DisasterLink-API.pdb
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\DisasterLink-API.genruntimeconfig.cache
 C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\ref\DisasterLink-API.dll
+C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\DisasterLink-API.sourcelink.json
+C:\Users\Desktop\Downloads\DisasterLink-Systems\DisasterLink-API\DisasterLink-API\obj\Debug\net9.0\compressed\6hw87bnyt7-wgjclso5ec.gz

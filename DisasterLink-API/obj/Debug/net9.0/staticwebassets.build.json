@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nSYVLlviyBpfpFujWfoQjdRDu6ZsYD22/yPNdSo8rFQ=",
+  "Hash": "+YFjJqZbOkSWAt+WXPFSOTe6gC6568SenfQAkTGR9g8=",
   "Source": "DisasterLink-API",
   "BasePath": "_content/DisasterLink-API",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "Identity": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-wgjclso5ec.gz",
       "SourceId": "DisasterLink-API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/DisasterLink-API",
-      "RelativePath": "swagger-custom#[.{fingerprint=x8dvpwfrfe}]?.js.gz",
+      "RelativePath": "swagger-custom#[.{fingerprint=wgjclso5ec}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -31,8 +31,8 @@
       "RelatedAsset": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-custom.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "kgpn64dunt",
-      "Integrity": "XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=",
+      "Fingerprint": "5webuplu2k",
+      "Integrity": "JdKc9JnbMBVp51wEJdYns3AlHRUUqTtEowg5tIbUuiw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-custom.js"
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "x8dvpwfrfe",
-      "Integrity": "0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=",
+      "Fingerprint": "wgjclso5ec",
+      "Integrity": "kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\swagger-custom.js"
@@ -207,12 +207,12 @@
     },
     {
       "Route": "swagger-custom.js",
-      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-wgjclso5ec.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000192678227"
+          "Quality": "0.000195388824"
         }
       ],
       "ResponseHeaders": [
@@ -222,15 +222,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5189"
+          "Value": "5117"
         },
         {
           "Name": "ETag",
-          "Value": "\"XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=\""
+          "Value": "\"JdKc9JnbMBVp51wEJdYns3AlHRUUqTtEowg5tIbUuiw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+          "Value": "Sun, 01 Jun 2025 20:29:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -250,13 +250,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=\""
+          "Value": "W/\"kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k="
+          "Value": "sha256-kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4="
         }
       ]
     },
@@ -271,7 +271,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "20097"
+          "Value": "19955"
         },
         {
           "Name": "Content-Type",
@@ -279,11 +279,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=\""
+          "Value": "\"kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+          "Value": "Sun, 01 Jun 2025 20:29:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -293,13 +293,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k="
+          "Value": "sha256-kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4="
         }
       ]
     },
     {
       "Route": "swagger-custom.js.gz",
-      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-wgjclso5ec.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -308,7 +308,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5189"
+          "Value": "5117"
         },
         {
           "Name": "Content-Type",
@@ -316,11 +316,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=\""
+          "Value": "\"JdKc9JnbMBVp51wEJdYns3AlHRUUqTtEowg5tIbUuiw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+          "Value": "Sun, 01 Jun 2025 20:29:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -338,18 +338,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo="
+          "Value": "sha256-JdKc9JnbMBVp51wEJdYns3AlHRUUqTtEowg5tIbUuiw="
         }
       ]
     },
     {
-      "Route": "swagger-custom.x8dvpwfrfe.js",
-      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "Route": "swagger-custom.wgjclso5ec.js",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-wgjclso5ec.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000192678227"
+          "Quality": "0.000195388824"
         }
       ],
       "ResponseHeaders": [
@@ -359,15 +359,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5189"
+          "Value": "5117"
         },
         {
           "Name": "ETag",
-          "Value": "\"XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=\""
+          "Value": "\"JdKc9JnbMBVp51wEJdYns3AlHRUUqTtEowg5tIbUuiw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+          "Value": "Sun, 01 Jun 2025 20:29:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -387,13 +387,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=\""
+          "Value": "W/\"kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "x8dvpwfrfe"
+          "Value": "wgjclso5ec"
         },
         {
           "Name": "label",
@@ -401,12 +401,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k="
+          "Value": "sha256-kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4="
         }
       ]
     },
     {
-      "Route": "swagger-custom.x8dvpwfrfe.js",
+      "Route": "swagger-custom.wgjclso5ec.js",
       "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\wwwroot\\swagger-custom.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -416,7 +416,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "20097"
+          "Value": "19955"
         },
         {
           "Name": "Content-Type",
@@ -424,11 +424,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k=\""
+          "Value": "\"kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+          "Value": "Sun, 01 Jun 2025 20:29:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -438,7 +438,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "x8dvpwfrfe"
+          "Value": "wgjclso5ec"
         },
         {
           "Name": "label",
@@ -446,13 +446,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-0T2VYqAYe8Mrkh+7XIgGa2GSsngHkFWYpxB0tyNMP8k="
+          "Value": "sha256-kNKrbQVQVWIGP5nj3KQ8cX/fgKgazpD3ru1szMFqnx4="
         }
       ]
     },
     {
-      "Route": "swagger-custom.x8dvpwfrfe.js.gz",
-      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-x8dvpwfrfe.gz",
+      "Route": "swagger-custom.wgjclso5ec.js.gz",
+      "AssetFile": "C:\\Users\\Desktop\\Downloads\\DisasterLink-Systems\\DisasterLink-API\\DisasterLink-API\\obj\\Debug\\net9.0\\compressed\\6hw87bnyt7-wgjclso5ec.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -461,7 +461,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5189"
+          "Value": "5117"
         },
         {
           "Name": "Content-Type",
@@ -469,11 +469,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo=\""
+          "Value": "\"JdKc9JnbMBVp51wEJdYns3AlHRUUqTtEowg5tIbUuiw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 29 May 2025 17:50:42 GMT"
+          "Value": "Sun, 01 Jun 2025 20:29:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -491,7 +491,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "x8dvpwfrfe"
+          "Value": "wgjclso5ec"
         },
         {
           "Name": "label",
@@ -499,7 +499,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-XHnQEuyRewizoFN3h+V/kw3pllII4vLyMDlbI/Vdkoo="
+          "Value": "sha256-JdKc9JnbMBVp51wEJdYns3AlHRUUqTtEowg5tIbUuiw="
         }
       ]
     },

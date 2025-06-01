@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DisasterLink-API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f18feb0502b9494f8d178e8ccedf89f7049ee362")]
 [assembly: System.Reflection.AssemblyProductAttribute("DisasterLink-API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DisasterLink-API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
