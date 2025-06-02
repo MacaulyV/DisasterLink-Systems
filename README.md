@@ -178,6 +178,8 @@ Os testes foram organizados em classes que seguem a estrutura dos controllers da
     
     Mesmo com um código grande, a análise mostra que não há problemas de alta gravidade, e todos os avisos e sugestões podem ser tratados com refatoração incremental, sem comprometer o funcionamento. Isso demonstra maturidade do código e cultura de qualidade na equipe.
 
+  ---
+
   ## 🧑‍💻 Equipe de Desenvolvimento
     
     - **Macauly Vivaldo da Silva** — RM: 553350 | 2TDSPC
