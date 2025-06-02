@@ -29,7 +29,7 @@ namespace DisasterLink_API.Controllers
         /// Este endpoint permite criar um novo usuário com permissões administrativas.
         /// 
         /// Características:
-        /// - Não requer vínculo com município
+        /// - Acesso restrito apenas para administradores autenticados
         /// - Criação de conta administrativa completa
         /// - Validação automática de dados
         /// 
@@ -52,6 +52,7 @@ namespace DisasterLink_API.Controllers
         /// - Dados obrigatórios não foram preenchidos
         /// - Formato de dados inválido
         /// </response>
+        [Authorize(Roles = "Admin")]
         [HttpPost("cadastrar")]  
         [ProducesResponseType(typeof(AdminDto), 201)]
         [ProducesResponseType(typeof(object), 400)]
