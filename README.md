@@ -394,8 +394,8 @@ A **API central em .NET** é o núcleo de toda a solução. Ela conecta **app mo
 
 ---
 
-<details open>
-  <summary><h2>🗂️ Estrutura Completa e Detalhada do Projeto</h2>h2></summary>
+<details>
+  <summary><h2>🗂️ Estrutura Completa e Detalhada do Projeto</h2></summary>
 
 A arquitetura da API DisasterLink foi desenhada seguindo as melhores práticas de desenvolvimento em .NET, com forte separação de responsabilidades, extensibilidade e clareza. Cada pasta e arquivo tem papel fundamental para a organização, manutenibilidade e escalabilidade da solução.
 
