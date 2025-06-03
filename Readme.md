@@ -2,191 +2,221 @@
 
 ![DisasterLink Systems-Capa.png](https://github.com/user-attachments/assets/155f81d4-12a3-4e55-9f6e-6b7c8041b3f8)
 
-# ⚡🌍 DisasterLink Systems — Plataforma colaborativa para mapear, monitorar e responder rapidamente a desastres naturais.
+## 🧑‍💻 Equipe de Desenvolvimento
+
+- **Macauly Vivaldo da Silva** — RM: 553350 | 2TDSPC
+- **Daniel Bezerra da Silva Melo** — RM: 553792 | 2TDSPC
+- **Gustavo Rocha Caxias** — RM: 553310 | 2TDSPA
+
+## 🌎 **Descrição Detalhada do Projeto DisasterLink Systems**
+
+O **DisasterLink Systems** é uma solução digital **colaborativa e inteligente** focada em situações de emergência pós-desastres naturais — enchentes, deslizamentos, temporais, incêndios, entre outros cenários críticos que afetam cidades brasileiras.
+
+A solução visa **integrar cidadãos, autoridades e tecnologia**, centralizando:
+
+- Informação sobre abrigos e pontos de apoio.
+- Mapeamento de doações e necessidades.
+- Comunicação eficiente e automatizada via alertas.
+- Recomendação personalizada baseada em IA para direcionar quem precisa de ajuda ao recurso certo.
 
 ---
 
-## 🧩 **Problema**
+## 🤝 **Lógica de Integração da Solução – Como Tudo Colabora**
 
-Desastres naturais como enchentes, deslizamentos, ondas de calor e tempestades causam impactos imediatos e severos nas cidades brasileiras.
+### 🧩 **Arquitetura Modular e Sinérgica**
 
-🚫 **Desafio atual:**
-
-- Informação descentralizada e lenta
-- Moradores sem canal fácil de denúncia ou ajuda
-- Defesa Civil e órgãos oficiais com pouca visibilidade em tempo real
-- Dificuldade para priorizar áreas e direcionar recursos de forma eficiente
-- Falta de integração entre tecnologia, população e resposta oficial
+A DisasterLink é composta por **três módulos principais**, cada um com responsabilidades claras, mas todos interconectados por meio da **API central**:
 
 ---
 
-## 💡 **Solução Proposta**
+### 🚀 **API Central (.NET C#)**
 
-### **Plataforma Integrada de Mapeamento Colaborativo e Monitoramento em Tempo Real**
-
-### 🗺️ **O que é?**
-
-Um ecossistema digital composto por aplicativo mobile, painel web, API central e integração com dispositivos IoT, onde:
-
-- Moradores e voluntários **cadastram relatos de problemas, enviam fotos e localizações** diretamente do app ou web.
-- Dados são **validados e priorizados** por autoridades/Defesa Civil via dashboard administrativo.
-- Sensores IoT monitoram pontos críticos (nível de água, temperatura, presença em abrigos) e alimentam o sistema em tempo real.
-- Toda a comunidade **visualiza o mapa atualizado**, recebe alertas e acompanha campanhas de prevenção e doação.
+- **🧠 Papel:** Cérebro da plataforma – concentra todas as regras de negócio, segurança, autenticação JWT, gestão dos dados, controle de permissões e integração com IA.
+- **🔌 Integração:**
+    - Serve de ponte **única** para todos os demais módulos.
+    - Recebe e processa todas as requisições (cadastro, login, buscas, recomendações, registros de doação, emissão de alertas, etc).
+    - Exige token JWT para ações sensíveis.
+    - Responsável por auditar tudo que acontece na plataforma.
 
 ---
 
-## 🎯 **Objetivo**
+### 📱 **Aplicativo Mobile (React Native)**
 
-- **Centralizar, democratizar e agilizar** a comunicação e a tomada de decisão durante desastres.
-- **Unir cidadãos, autoridades e tecnologia** numa resposta mais eficiente, salvando vidas e recursos.
-- **Gerar histórico e inteligência** para prevenção futura de tragédias.
-
----
-
-## 👥 **Público-Alvo**
-
-- Moradores de áreas de risco
-- Defesa Civil e órgãos municipais/estaduais
-- Voluntários e ONGs
-- Toda a comunidade afetada
+- **👤 Papel:**
+    
+    Principal canal para o cidadão. Permite visualizar abrigos e pontos de coleta, receber alertas, buscar recomendações, cadastrar-se e participar de doações/voluntariado.
+    
+- **🔗 Integração:**
+    - Consome **exclusivamente** os endpoints da API central.
+    - Nunca armazena dados localmente de forma persistente: tudo é validado, salvo e lido diretamente via API, garantindo sincronização e segurança.
 
 ---
 
-## 🛠️ **Como Funciona?**
+### 🖥️ **Painel Web/Admin (Java Spring Boot + Thymeleaf)**
 
-### **1. Relatos Colaborativos**
-
-📱 Moradores/voluntários enviam relatos (alagamento, pedido de socorro, obstrução de via, etc.)
-
-📸 Anexação de fotos, Vídeo e localização via GPS
-
-🗂️ Cada relato recebe status (pendente, aprovado, resolvido)
-
-### **2. Painel Administrativo Web**
-
-🖥️ Dashboard para autoridades visualizarem relatos e áreas afetadas
-
-✔️ Validação e priorização dos relatos
-
-📊 Relatórios em tempo real para tomada de decisão
-
-### **3. Monitoramento IoT**
-
-🔌 Sensores em campo (nível de água, temperatura, presença) conectados via MQTT/HTTP
-
-📈 Dados em tempo real atualizam o painel e podem disparar alertas automáticos
-
-### **4. Alertas e Campanhas**
-
-🚨 Alertas automáticos ou manuais para moradores próximos a áreas de risco
-
-🤝 Campanhas de doação, prevenção e mobilização organizadas via plataforma
-
-### **5. Histórico & Inteligência**
-
-🕒 Registro histórico de ocorrências e alertas
-
-🧠 Base para análises futuras e estratégias de prevenção
+- **🛡️ Papel:**
+    
+    Plataforma de administração para gestores, Defesa Civil e órgãos oficiais. Garante governança, controle e auditoria dos recursos do sistema.
+    
+- **🔗 Integração:**
+    - Também consome a API central, utilizando endpoints de consulta e gestão.
+    - Possui **endpoints próprios** para autenticação e cadastro de administradores.
+    - Só usuários com perfil de admin conseguem acessar recursos críticos (ex: criar/excluir abrigos e pontos de coleta, emitir alertas).
+    - Toda autenticação e autorização é centralizada via JWT, mesmo para admins.
 
 ---
 
-## 🏆 **Diferenciais**
+### 🧬 **Como tudo funciona junto?**
 
-- **100% colaborativo:** qualquer cidadão pode participar
-- **Tempo real:** informações circulam rapidamente
-- **Validação oficial:** dashboard para Defesa Civil priorizar e agir
-- **Integração IoT:** sensores físicos alimentam o sistema automaticamente
-- **Acessível:** web, mobile, fácil para todos os perfis de usuário
-- **Escalável:** pode ser replicado para diversas cidades e estados
+- **Usuário comum** (mobile) acessa a API → visualiza abrigos/pontos/alertas, realiza login, solicita recomendações.
+- **Admin** (painel web) acessa a API → gerencia recursos, cadastra/exclui entidades, emite alertas, audita dados.
+- **API** controla e valida todas as transações, garantindo que regras de negócio e segurança sejam cumpridas.
+- **Machine Learning ([ML.NET](http://ml.net/))** é chamado pela API nos momentos de recomendação, tornando o atendimento mais inteligente.
 
 ---
 
-## **💻 Tecnologias e Ferramentas Utilizadas**
+### 🌟 **Benefícios da Integração**
+
+- **🔒 Segurança Total:** Toda operação sensível só passa com autenticação e autorização.
+- **⏱️ Tempo Real e Consistência:** Mobile e web consomem sempre o dado mais recente; tudo é auditado e centralizado.
+- **📈 Inteligência:** Regras de negócio, recomendações e alertas são orquestrados pela API para máxima eficiência.
+- **⚙️ Facilidade de manutenção:** Qualquer melhoria ou ajuste em um módulo não afeta os outros, desde que mantenha contrato com a API.
+    
+    ---
+    
+
+## 🏗️ **Arquitetura e Funcionamento Geral da API**
+
+A **API central em .NET** é o núcleo de toda a solução. Ela conecta **app mobile** (usuário comum), **painel web** (administração pública), provendo todos os dados e funcionalidades essenciais. Sua arquitetura separa responsabilidades em camadas bem definidas, garantindo segurança, escalabilidade e clareza no fluxo dos dados.
+
+## 📦 Entidades Principais
+
+### 🔹 Usuário
+
+- **Campos principais**: Id, Nome, Email, Senha (hash), Localidade
+- **Uso**: Representa o usuário comum do sistema, com login e registro facilitado.
+
+### 🔸 Admin
+
+- **Campos principais**: Id, Nome, Email, Senha (hash)
+- **Uso**: Exclusivo para administração, gestão de alertas e pontos críticos.
+
+### 🏠 Abrigo Temporário
+
+- **Campos principais**: Id, Nome, Cidade, Endereço, Capacidade, Ocupação atual, Ativo
+- **Uso**: Lista e gestão de locais seguros para abrigar pessoas após desastres.
+
+### 📍 Ponto de Coleta de Doações
+
+- **Campos principais**: Id, Nome, Endereço, Itens aceitos, Responsável, Contato, Ativo
+- **Uso**: Gestão de locais oficiais para recebimento e distribuição de doações.
+
+### 🚨 Alerta
+
+- **Campos principais**: Id, Título, Descrição, Cidade, Tipo, Prioridade, Ativo
+- **Uso**: Comunicação imediata de riscos e informações críticas.
+    
+    ---
+    
+
+## 🧪 Instruções de Testes e Execução
+
+### 🔹 **Como Testar a API**
+
+- **Swagger UI:**
+    
+    Toda a API já possui exemplos de requests e respostas documentados diretamente no Swagger.
+    
+    Não é necessário fornecer exemplos de JSON aqui: basta acessar o endpoint `/swagger` após iniciar o projeto, onde você poderá **testar todos os recursos, enviar dados e visualizar retornos** de forma interativa e explicativa.
+    
+
+### 📑 Links Úteis para Testar e Validar o Sistema
+
+- [🚀 **Deploy do Sistema**](https://disasterlink-api.fly.dev/swagger/index.html)
+    
+    Teste o sistema rodando em ambiente real, pronto pra uso.
+    
 
 ---
 
-### 🧩 **.NET API & Backend Central**
+## 🏗️ Desenho de Arquitetura CI/CD — DisasterLink
 
-- **C#:** Desenvolvimento da API principal
-- **ASP.NET Core Web API:** Estrutura do backend
-- **Oracle DB:** Banco de dados relacional
-- **Swagger:** Documentação automática da API
-- **ML.NET:** Machine Learning integrado na API
-- **xUnit:** Testes automatizados
-- **RESTful:** Arquitetura de API
-- **HATEOAS, Rate Limit:** Boas práticas de design
-- **Docker:** Containerização e deploy
-- **Azure Cloud:** Hospedagem e banco na nuvem ☁️
+O diagrama acima traduz exatamente o fluxo pensado para o deploy e integração contínua do DisasterLink na Azure, aplicando **DevOps de verdade** e automatizando todo ciclo — do commit ao deploy em produção.
 
 ---
 
-### ☕ **Java MVC Web Plataform**
-
-- **Spring MVC:** Estrutura web backend
-- **Thymeleaf:** Templates dinâmicos
-- **OAuth2:** Autenticação segura
-- **RabbitMQ:** Produtor/consumidor de mensagens
-- **Spring AI:** Recursos de IA para análise de dados
-- **Testes unitários/integrados:** Cobertura de qualidade
-- **Internacionalização:** Suporte a múltiplos idiomas
-- **Deploy em Azure ou VM** ☁️
+![image.png](https://github.com/user-attachments/assets/b7b71a24-3b8d-467a-bcf6-db14cc15754b)
 
 ---
 
-### 📱 **DisasterLink App**
+### 🛠️ **Source (Git + C#)**
 
-- **React Native (Expo):** Desenvolvimento cross-platform
-- **React Navigation:** Navegação entre telas
-- **Axios/Fetch:** Comunicação com APIs
-- **Firebase Auth:** Autenticação de usuários
-- **Custom Design:** Identidade visual própria
-- **Styled Components/** Estilização
+O desenvolvimento é todo versionado via Git, no repositório principal do projeto.
+
+Qualquer alteração relevante no código C# já dispara a pipeline YAML, então não existe gap entre desenvolvimento e integração.
 
 ---
 
-### 🤖 **IoT & Dispositivos Físicos**
+### 🚀 **Pipeline (Azure DevOps)**
 
-- **ESP32/Arduino:** Microcontroladores dos sensores
-- **Sensores físicos:** Nível de água, temperatura, presença
-- **Node-RED / Thinger.io / ThingSpeak:** Gateways de integração
-- **MQTT / HTTP (JSON):** Protocolos de comunicação
-- **Wokwi:** Simulação de hardware
-- **Dashboard em Node-RED:** Painel de monitoramento em tempo real
-- **Azure IoT Hub (opcional):** Gerenciamento em nuvem ☁️
+Aqui está o centro do DevOps:
 
----
+Tudo gira em torno da pipeline, **definida 100% como código** via YAML.
 
-### 🪐 **Banco de Dados Relacional e Não Relacional**
-
-- **Oracle:** Banco principal relacional (dados estruturados)
-- **PL/SQL:** Procedures, functions, triggers, packages
-- **MongoDB:** Banco NoSQL para logs, relatos livres, metadados de imagens
-- **Integração Oracle/MongoDB:** Sincronização de dados
+- **Nada de etapas manuais**: build, testes (quando aplicável), docker build, deploy — tudo no pipeline.
+- **Secrets, variáveis de ambiente e connection strings**? São gerenciados direto nas configurações do pipeline, nunca hardcoded no código.
 
 ---
 
-### 🧑‍💻 **DevOps & Cloud**
+### 📄 **YAML — O “Script Mestre”**
 
-- **Azure Boards:** Gestão ágil, backlog e SCRUM
-- **Azure DevOps / Pipelines:** CI/CD, build, deploy automatizado
-- **Docker:** Imagens e containers
-- **GitHub:** Versionamento, repositório e documentação
-- **Draw.io / Excalidraw / Visual Paradigm:** Diagramas de arquitetura
-- **Vídeos explicativos:** Demonstração do sistema e dos deploys
+O YAML não é só um arquivo de configuração; ele é a **documentação viva** e automatização do processo inteiro:
 
----
+- **Triggers**: define quais branches ou eventos (push/PR) vão disparar a pipeline.
+- **Jobs/tasks**: descreve tudo que acontece — do restore ao deploy.
+- **Deploy sem gambiarra**: cada comando está ali por um motivo, do checkout ao push da imagem.
+- **Portabilidade e rastreabilidade**: qualquer dev pega o repositório e entende na hora o que está rolando no CI/CD.
 
-### 📈 **Quality Assurance & Testes**
+Resumindo:
 
-- **xUnit, JUnit:** Testes automatizados .NET e Java
-- **Testes manuais:** Roteiros e validação de funcionalidades
-- **Azure Boards:** Planejamento e acompanhamento dos testes
-- **Critérios de aceite SCRUM:** Validação das entregas
+**YAML = pipeline transparente, auditável e reprodutível, sem dependência de configuração manual na interface.**
 
 ---
 
-## **🧑‍💻 Equipe de Desenvolvimento**
+### 🐳 **Docker Image**
 
-- **Macauly Vivaldo da Silva** – *Frontend & UX/UI, IA & Backend*
-- **Daniel Bezerra da Silva Melo** – *Mobile Developer & Infraestrutura DevOps (Deploy)*
-- **Gustavo Rocha Caxias** – *Banco de Dados*
+Nada de ambiente “diferente do meu”.
+
+O build gera uma imagem Docker padronizada, rodando .NET exatamente como esperado.
+
+Se for usar ACR, o push está integrado.
+
+Se não, a imagem já vai direto para o deploy.
+
+---
+
+### ☁️ **Azure App Service (Deploy automatizado)**
+
+A pipeline faz o deploy da imagem no **Azure App Service (Container Linux)**, que já está configurado para puxar a imagem e injetar as configs de ambiente/connection string.
+
+- **Zero intervenção manual**: terminou a pipeline, está em produção.
+- **Escalabilidade garantida pelo Azure**, sem se preocupar com infraestrutura.
+
+---
+
+### 🗄️ **Azure SQL Database (Consumo apenas)**
+
+O banco já existe no Azure (não é criado via pipeline).
+
+A aplicação só **consome** o banco — conexão feita via connection string, passando pela camada segura de variáveis do pipeline.
+
+Assim, o fluxo respeita a separação entre aplicação e dados, mantendo segurança e boas práticas.
+
+---
+
+## 🔄 **Fluxo resumido**
+
+1. **Commit/push no Git →** dispara a pipeline via YAML.
+2. **Pipeline:** Build, dockerização, (push pro ACR se usado), deploy automatizado.
+3. **Deploy:** App Service sobe a imagem já com configs e aponta para o Azure SQL.
+4. **Execução:** API está rodando, pronta para atender (sem “mão” em servidor).
