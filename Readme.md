@@ -1,6 +1,6 @@
-# DisasterLink Systems
+# Arquitetura de Pipeline CI/CD – DisasterLink Systems
 
-![DisasterLink Systems-Capa.png](DisasterLink_Systems-Capa.png)
+![DisasterLink Systems-Capa.png](https://github.com/user-attachments/assets/155f81d4-12a3-4e55-9f6e-6b7c8041b3f8)
 
 # ⚡🌍 DisasterLink Systems — Plataforma colaborativa para mapear, monitorar e responder rapidamente a desastres naturais.
 
