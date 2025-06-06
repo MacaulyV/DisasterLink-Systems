@@ -326,7 +326,6 @@ A **API central em .NET** é o núcleo de toda a solução. Ela conecta **app mo
         
         Esse endpoint serve pra re-treinar o modelo de Machine Learning (ML.NET) usando todos os dados atuais do sistema. Normalmente, só administradores têm acesso a essa função, já que ela atualiza o modelo com novos dados cadastrados e garante que as recomendações continuem precisas e atualizadas.
         
-    
     ---
     
     ## 🧠 **Como funciona o modelo e o fluxo de recomendação**
@@ -392,6 +391,86 @@ A **API central em .NET** é o núcleo de toda a solução. Ela conecta **app mo
     - O modelo **não pode ser sobrescrito por qualquer usuário**: há proteção por perfil de acesso.
     - O modelo é desacoplado da lógica CRUD, ou seja, a API segue funcionando mesmo que o modelo precise ser atualizado ou substituído.
 
+---
+
+## 🚨 Novos Endpoints: Integração de Alertas Climáticos (IoT + Solução Principal)
+
+> ⚡ ATENÇÃO:
+> 
+> 
+> Estes endpoints foram adicionados posteriormente ao projeto, como parte da integração prática entre o módulo de IoT e a solução principal da disciplina. O objetivo é permitir que alertas climáticos gerados automaticamente, a partir de dados meteorológicos reais, sejam persistidos e gerenciados pela API central do sistema.
+> 
+
+---
+
+### 🌦️ **O que são os Endpoints de Alertas Climáticos?**
+
+- São rotas REST criadas para receber e registrar **alertas automáticos** disparados por sensores virtuais (dados reais de APIs climáticas), processados pela camada de inteligência do projeto de IoT.
+- Cada vez que um evento climático relevante é detectado (ex: temperatura extrema, vento perigoso, umidade baixa), o sistema de IoT envia um **POST** para a API, que grava esse alerta na tabela dedicada do banco de dados.
+
+---
+
+### 🔗 **Como funciona a integração?**
+
+1. **Coleta de dados:**
+    
+    A solução IoT busca periodicamente dados reais de clima para mais de 100 cidades, usando APIs como OpenWeatherMap.
+    
+2. **Detecção de alerta:**
+    
+    Quando um valor fora do padrão é identificado (por exemplo, calor extremo ou vento forte), um alerta é montado automaticamente.
+    
+3. **Envio à API .NET:**
+    
+    O alerta é enviado via **POST** para o endpoint especial `/api/alertasclimaticos` da solução central.
+    
+4. **Persistência e consulta:**
+    
+    Os alertas ficam salvos no banco de dados para consulta posterior, relatórios e possíveis notificações para usuários.
+    
+
+---
+
+### 📑 **Detalhes do Endpoint**
+
+- **Rota:**
+    
+    `POST /api/alertasclimaticos`
+    
+- **Exemplo de payload recebido:**
+    
+    ```json
+    {
+       "cidade": "São Paulo",
+       "tipoAlerta": "Enchente",
+       "temperatura": 22.5,
+       "umidade": 85.0,
+       "vento": 10.2,
+       "descricao": "Risco de enchente na região central devido a fortes chuvas."
+    }
+    ```
+    
+- **Entidade de banco:**
+    
+    Os dados são salvos em uma tabela dedicada chamada `AlertasClimaticos` (ou `WeatherAlerts`, dependendo do padrão do projeto).
+    
+
+---
+
+### 🛠️ **Por que isso é relevante?**
+
+- Garante **rastreabilidade** e registro histórico de eventos climáticos relevantes detectados em tempo real.
+- Facilita a geração de **relatórios analíticos** e dashboards centralizados.
+- Permite futuras automações, como disparo de notificações, integração com aplicativos mobile/web, ou acionamento de processos automáticos.
+
+---
+
+### 🧩 **Resumo Visual**
+
+- 🔗 **Integração entre módulos:** IoT (dados reais) → FastAPI (detecção) → API .NET (persistência)
+- 🌐 **Dados reais:** Utilizando APIs meteorológicas e cobrindo múltiplas cidades
+- 📂 **Persistência:** Tabela exclusiva para alertas climáticos
+    
 ---
 
 <details>
@@ -714,94 +793,12 @@ Scripts gerados automaticamente para versionamento do schema do banco de dados v
  
       ---
 
-      ## 🚨 Novos Endpoints: Integração de Alertas Climáticos (IoT + Solução Principal)
-
-> ⚡ ATENÇÃO:
-> 
-> 
-> Estes endpoints foram adicionados posteriormente ao projeto, como parte da integração prática entre o módulo de IoT e a solução principal da disciplina. O objetivo é permitir que alertas climáticos gerados automaticamente, a partir de dados meteorológicos reais, sejam persistidos e gerenciados pela API central do sistema.
-> 
-
----
-
-### 🌦️ **O que são os Endpoints de Alertas Climáticos?**
-
-- São rotas REST criadas para receber e registrar **alertas automáticos** disparados por sensores virtuais (dados reais de APIs climáticas), processados pela camada de inteligência do projeto de IoT.
-- Cada vez que um evento climático relevante é detectado (ex: temperatura extrema, vento perigoso, umidade baixa), o sistema de IoT envia um **POST** para a API, que grava esse alerta na tabela dedicada do banco de dados.
-
----
-
-### 🔗 **Como funciona a integração?**
-
-1. **Coleta de dados:**
-    
-    A solução IoT busca periodicamente dados reais de clima para mais de 100 cidades, usando APIs como OpenWeatherMap.
-    
-2. **Detecção de alerta:**
-    
-    Quando um valor fora do padrão é identificado (por exemplo, calor extremo ou vento forte), um alerta é montado automaticamente.
-    
-3. **Envio à API .NET:**
-    
-    O alerta é enviado via **POST** para o endpoint especial `/api/alertasclimaticos` da solução central.
-    
-4. **Persistência e consulta:**
-    
-    Os alertas ficam salvos no banco de dados para consulta posterior, relatórios e possíveis notificações para usuários.
-    
-
----
-
-### 📑 **Detalhes do Endpoint**
-
-- **Rota:**
-    
-    `POST /api/alertasclimaticos`
-    
-- **Exemplo de payload recebido:**
-    
-    ```json
-    {
-       "cidade": "São Paulo",
-       "tipoAlerta": "Enchente",
-       "temperatura": 22.5,
-       "umidade": 85.0,
-       "vento": 10.2,
-       "descricao": "Risco de enchente na região central devido a fortes chuvas."
-    }
-    ```
-    
-- **Entidade de banco:**
-    
-    Os dados são salvos em uma tabela dedicada chamada `AlertasClimaticos` (ou `WeatherAlerts`, dependendo do padrão do projeto).
-    
-
----
-
-### 🛠️ **Por que isso é relevante?**
-
-- Garante **rastreabilidade** e registro histórico de eventos climáticos relevantes detectados em tempo real.
-- Facilita a geração de **relatórios analíticos** e dashboards centralizados.
-- Permite futuras automações, como disparo de notificações, integração com aplicativos mobile/web, ou acionamento de processos automáticos.
-
----
-
-### 🧩 **Resumo Visual**
-
-- 🔗 **Integração entre módulos:** IoT (dados reais) → FastAPI (detecção) → API .NET (persistência)
-- 🌐 **Dados reais:** Utilizando APIs meteorológicas e cobrindo múltiplas cidades
-- 📂 **Persistência:** Tabela exclusiva para alertas climáticos
-    
-    ---
-    
-
 ℹ️ **Quer entender como as disciplinas se conectam na solução final?**
 
 - 🔗 [**Integração e arquitetura do módulo IoT](https://github.com/MacaulyV/DisasterLink-Systems/tree/feature/iot-integration):** Veja como o sistema de sensores, alertas automáticos e dados reais foi desenvolvido e conectado à solução central.
 - 📱 [**Integração e funcionamento do módulo Mobile](https://github.com/MacaulyV/DisasterLink-Systems/tree/feature/disasterlink-mobile):** Entenda como o aplicativo mobile recebe, exibe e interage com os dados em tempo real.
 
 Explore cada link para visualizar a integração completa da solução, desde a coleta dos dados até a experiência do usuário final — integrando IoT, API central (.NET) e Mobile em uma solução unificada.
-        
 
 ---
 
