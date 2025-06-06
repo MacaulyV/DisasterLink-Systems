@@ -791,7 +791,7 @@ Scripts gerados automaticamente para versionamento do schema do banco de dados v
  
       ---
 
-ℹ️ **Quer entender como as disciplinas se conectam na solução final?**
+ℹ️ **Quer descobrir melhor como as disciplinas se conectam na solução final?**
 
 - 🔗 [**Integração e arquitetura do módulo IoT](https://github.com/MacaulyV/DisasterLink-Systems/tree/feature/iot-integration):** Veja como o sistema de sensores, alertas automáticos e dados reais foi desenvolvido e conectado à solução central.
 - 📱 [**Integração e funcionamento do módulo Mobile](https://github.com/MacaulyV/DisasterLink-Systems/tree/feature/disasterlink-mobile):** Entenda como o aplicativo mobile recebe, exibe e interage com os dados em tempo real.
