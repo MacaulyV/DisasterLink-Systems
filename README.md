@@ -395,11 +395,9 @@ A **API central em .NET** é o núcleo de toda a solução. Ela conecta **app mo
 
 ## 🚨 Novos Endpoints: Integração de Alertas Climáticos (IoT + Solução Principal)
 
-> ⚡ ATENÇÃO:
-> 
-> 
-> Estes endpoints foram adicionados posteriormente ao projeto, como parte da integração prática entre o módulo de IoT e a solução principal da disciplina. O objetivo é permitir que alertas climáticos gerados automaticamente, a partir de dados meteorológicos reais, sejam persistidos e gerenciados pela API central do sistema.
-> 
+###⚡ ATENÇÃO:
+ 
+Estes endpoints foram adicionados posteriormente ao projeto, como parte da integração prática entre o módulo de IoT e a solução principal da disciplina. O objetivo é permitir que alertas climáticos gerados automaticamente, a partir de dados meteorológicos reais, sejam persistidos e gerenciados pela API central do sistema. 
 
 ---
 
