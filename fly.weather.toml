@@ -1,0 +1,13 @@
+# Nome da aplicação no Fly.io
+app = "weather-sensor-api"
+
+# Região do servidor (gru = São Paulo)
+primary_region = 'gru'
+
+[build]
+  # Dockerfile usado pra buildar o app
+  dockerfile = 'docker/Dockerfile.weather'
+
+[[vm]]
+  # Tipo da VM (mais simples, baratinha)
+  size = 'shared-cpu-1x'

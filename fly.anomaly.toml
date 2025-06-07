@@ -1,0 +1,27 @@
+# Nome do app no Fly.io
+app = 'anomaly-api'
+
+# Região (São Paulo)
+primary_region = 'gru'
+
+[build]
+  # Dockerfile pra buildar o app
+  dockerfile = 'docker/Dockerfile.anomaly'
+
+[http_service]
+  # Porta interna do app (8080)
+  internal_port = 8080
+  # Sempre HTTPS
+  force_https = true
+  # Não desliga as VMs automaticamente
+  auto_stop_machines = 'off'
+  # Sobe VM automático se acessar
+  auto_start_machines = true
+  # Sempre 1 VM ativa
+  min_machines_running = 1
+  # Nome do processo
+  processes = ['app']
+
+[[vm]]
+  # Tipo da VM (básica)
+  size = 'shared-cpu-1x'

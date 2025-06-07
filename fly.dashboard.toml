@@ -1,0 +1,27 @@
+# Nome da aplicação no Fly.io
+app = 'disasterlink-dashboard'
+
+# Região do servidor (São Paulo)
+primary_region = 'gru'
+
+[build]
+  # Dockerfile usado na build
+  dockerfile = 'docker/Dockerfile.dashboard'
+
+[http_service]
+  # Porta interna onde o app roda (8501, padrão do Streamlit)
+  internal_port = 8501
+  # Força HTTPS sempre
+  force_https = true
+  # Não desliga as VMs automaticamente
+  auto_stop_machines = 'off'
+  # Sobe as VMs automaticamente se tiver acesso
+  auto_start_machines = true
+  # Sempre deixa pelo menos 1 VM ligada
+  min_machines_running = 1
+  # Nome do processo (app)
+  processes = ['app']
+
+[[vm]]
+  # Tipo da VM (simples)
+  size = 'shared-cpu-1x'

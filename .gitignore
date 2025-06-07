@@ -1,0 +1,42 @@
+# Ignorar arquivos de ambiente virtual Python
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code settings e outras configs de IDE
+.vscode/
+.idea/
+
+# Arquivos temporários/criados pelo sistema
+*.swp
+*.swo
+*~
+
+# Configs de sistema
+.DS_Store
+Thumbs.db
+
+# Docker: só ignora builds locais (não precisa ignorar os Dockerfiles)
+**/docker-compose*.yml
+**/Dockerfile.*
+
+# Logs, se existirem
+*.log
+
+# Credenciais e configs sensíveis (se um dia criar)
+.env
+.env.*
+
+# Arquivos de build do Python
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Arquivos ocultos ou temporários do Linux/Mac
+*._*
