@@ -18,7 +18,7 @@ Ele envolve:
 ---
 
 <details>
-# <summary><h2>🌎 Descrição Detalhada do Projeto DisasterLink Systems (Opcional)</h2></summary>
+# <summary><h2>**🏗️ Descrição Geral da Solução DisasterLink Systems**</h2></summary>
 
 O **DisasterLink Systems** é uma solução digital **colaborativa e inteligente** focada em situações de emergência pós-desastres naturais — enchentes, deslizamentos, temporais, incêndios, entre outros cenários críticos que afetam cidades brasileiras.
 
