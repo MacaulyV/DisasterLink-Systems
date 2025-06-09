@@ -12,7 +12,7 @@ const { width } = Dimensions.get('window');
 
 interface OnboardingButtonProps {
   title: string;
-  onPress: () => void;
+  onPress?: () => void;
   primary?: boolean;
 }
 
@@ -22,6 +22,8 @@ const OnboardingButton = ({ title, onPress, primary = true }: OnboardingButtonPr
   
   // Função para animar o botão quando pressionado
   const handlePress = () => {
+    if (!onPress) return;
+    
     scale.value = withSequence(
       withTiming(0.95, { duration: 100, easing: Easing.inOut(Easing.ease) }),
       withTiming(1, { duration: 150, easing: Easing.out(Easing.back(3)) })

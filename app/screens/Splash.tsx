@@ -10,7 +10,6 @@ import Animated, {
   Easing,
   runOnJS
 } from 'react-native-reanimated';
-import { LinearGradient } from 'expo-linear-gradient';
 // Importa a barra de progresso customizada e um helper pra splash nativa
 import ProgressBar from '../components/splash/ProgressBar';
 import { hideSplashWithTransition, forceHideSplash } from '../utils/splashHelper';
@@ -20,7 +19,7 @@ import { SplashScreenNavigationProp } from '../navigation/types';
 // Pega o tamanho da tela pra usar no layout
 const { width, height } = Dimensions.get('window');
 // Define o tempo que a splash vai ficar (3 segundos)
-const SPLASH_DURATION = 1000; // 10 segundos
+const SPLASH_DURATION = 3000; // 3 segundos
 
 // Componente principal da Splash Screen
 export default function SplashScreen() {
@@ -89,12 +88,7 @@ export default function SplashScreen() {
 
   // O que vai ser renderizado de fato na tela
   return (
-    <LinearGradient
-      colors={['#070709', '#1b1871']}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 15, y: 1 }}
-      style={styles.container}
-    >
+    <View style={styles.container}>
       {/* Logo centralizado e animado */}
       <Animated.View style={[styles.logoContainer, logoAnimatedStyle]}>
         <Image 
@@ -115,7 +109,7 @@ export default function SplashScreen() {
           onComplete={navigateToNextScreen}
         />
       </View>
-    </LinearGradient>
+    </View>
   );
 }
 
@@ -123,6 +117,7 @@ export default function SplashScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000000',
     alignItems: 'center',
     justifyContent: 'center',
   },
