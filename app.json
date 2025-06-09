@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "DisasterLink-App",
+    "slug": "DisasterLink-App",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/DisasterLink-Logo.png",
+    "scheme": "disasterlinkapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#000000"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "splash": {
+        "backgroundColor": "#000000"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/DisasterLink-Logo.png",
+        "backgroundColor": "#000000"
+      },
+      "splash": {
+        "backgroundColor": "#000000"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/images/DisasterLink-Logo.png"
+    },
+    "plugins": [
+      "expo-splash-screen"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
