@@ -282,7 +282,7 @@ export default function RegisterScreen() {
         
         // Função para navegar para a Home
         const navigateToHome = () => {
-          navigation.replace('Home');
+          navigation.replace('Profile');
         };
 
         // Anima a saída

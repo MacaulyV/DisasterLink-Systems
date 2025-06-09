@@ -9,7 +9,12 @@ import SplashScreen from '../screens/Splash';
 import OnboardingScreen from '../screens/Onboarding';
 import LoginScreen from '../screens/Login';
 import RegisterScreen from '../screens/Register';
-import HomeScreen from '../screens/Home';
+import ProfileScreen from '../screens/Profile';
+// Importa as telas futuras (serão implementadas posteriormente)
+// import SheltersScreen from '../screens/Shelters';
+// import CollectionScreen from '../screens/Collection';
+// import AIScreen from '../screens/AI';
+// import AlertsScreen from '../screens/Alerts';
 
 // Importa os serviços
 import { isOnboardingCompleted } from '../services/OnboardingService';
@@ -34,7 +39,7 @@ const AppNavigator = () => {
         
         // Se o usuário já estiver logado, vai direto para a Home
         if (userLoggedIn) {
-          setInitialRouteName('Home');
+          setInitialRouteName('Profile');
           return;
         }
 
@@ -82,7 +87,12 @@ const AppNavigator = () => {
         <Stack.Screen name="Onboarding" component={OnboardingScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        {/* Telas futuras (serão implementadas posteriormente) */}
+        {/* <Stack.Screen name="Shelters" component={SheltersScreen} /> */}
+        {/* <Stack.Screen name="Collection" component={CollectionScreen} /> */}
+        {/* <Stack.Screen name="AI" component={AIScreen} /> */}
+        {/* <Stack.Screen name="Alerts" component={AlertsScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

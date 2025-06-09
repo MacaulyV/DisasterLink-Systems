@@ -172,11 +172,10 @@ export default function LoginScreen() {
       
       if (resposta) {
         // Login bem-sucedido
-        console.log('Login bem-sucedido!', resposta);
         
         // Função para navegar para a Home
         const navigateToHome = () => {
-          navigation.replace('Home');
+          navigation.replace('Profile');
         };
         
         // Anima a saída
@@ -194,14 +193,22 @@ export default function LoginScreen() {
         }));
       } else {
         // Login falhou
-        Alert.alert('Erro', 'Email ou senha incorretos');
+        Alert.alert(
+          'Credenciais inválidas',
+          'Email ou senha incorretos. Por favor, verifique seus dados e tente novamente.',
+          [{ text: 'OK', style: 'default' }]
+        );
       }
     } catch (error) {
       // Remove o estado de carregamento
       setIsLoading(false);
       
-      console.error('Erro ao fazer login:', error);
-      Alert.alert('Erro', 'Ocorreu um erro ao tentar fazer login. Por favor, tente novamente.');
+      // Exibe mensagem amigável para o usuário
+      Alert.alert(
+        'Falha no login',
+        'Não foi possível fazer login. Verifique suas credenciais e sua conexão com a internet.',
+        [{ text: 'OK', style: 'default' }]
+      );
     }
   };
 

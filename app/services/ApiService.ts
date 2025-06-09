@@ -25,6 +25,13 @@ export interface UserData {
   bairro: string;
 }
 
+// Interface para dados de atualização do usuário
+export interface UpdateUserData {
+  nome?: string;
+  senhaAtual?: string;
+  novaSenha?: string;
+}
+
 // Interface para dados de login
 export interface LoginData {
   email: string;
@@ -71,7 +78,7 @@ export const loginUser = async (loginData: LoginData): Promise<UserData | null> 
       throw new Error('Formato de resposta da API inválido');
     }
   } catch (error) {
-    console.error('Erro ao fazer login:', error);
+    // Removido o console.error para evitar logs na interface do usuário
     return null;
   }
 };
@@ -109,8 +116,60 @@ export const registerUser = async (registerData: RegisterData): Promise<UserData
       throw new Error('Formato de resposta da API inválido');
     }
   } catch (error) {
-    console.error('Erro ao cadastrar usuário:', error);
+    // Removido o console.error para evitar logs na interface do usuário
     return null;
+  }
+};
+
+/**
+ * Atualiza os dados de um usuário existente
+ */
+export const updateUser = async (userId: string, updateData: UpdateUserData): Promise<any> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/usuarios/${userId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updateData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(errorData?.message || 'Não foi possível atualizar os dados. Tente novamente.');
+    }
+
+    if (response.status === 204) {
+      return { success: true };
+    }
+    
+    return response.json();
+  } catch (error) {
+    throw error;
+  }
+};
+
+/**
+ * Remove um usuário permanentemente
+ */
+export const deleteUser = async (userId: string): Promise<any> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/usuarios/${userId}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(errorData?.message || 'Erro ao remover o usuário.');
+    }
+
+    if (response.status === 204) {
+      return { success: true };
+    }
+    
+    return response.json();
+  } catch (error) {
+    throw error;
   }
 };
 
@@ -134,17 +193,9 @@ export const saveUserData = async (userData: any): Promise<void> => {
     
     await Promise.all(promises);
     
-    console.log('=== DADOS DO USUÁRIO SALVOS ===');
-    console.log(`ID: ${userData.id || 'N/A'}`);
-    console.log(`Nome: ${userData.nome || 'N/A'}`);
-    console.log(`Email: ${userData.email || 'N/A'}`);
-    console.log(`País: ${userData.pais || 'N/A'}`);
-    console.log(`Estado: ${userData.estado || 'N/A'}`);
-    console.log(`Cidade/Município: ${city || 'N/A'}`);
-    console.log(`Bairro: ${userData.bairro || 'N/A'}`);
-    console.log('===============================');
+    // Removidos os logs para evitar poluição na interface do usuário
   } catch (error) {
-    console.error('Erro ao salvar dados do usuário:', error);
+    // Removido o console.error para evitar logs na interface do usuário
   }
 };
 
@@ -176,7 +227,7 @@ export const getUserData = async (): Promise<UserData | null> => {
       bairro: bairro || '',
     };
   } catch (error) {
-    console.error('Erro ao recuperar dados do usuário:', error);
+    // Removido o console.error para evitar logs na interface do usuário
     return null;
   }
 };
@@ -189,7 +240,7 @@ export const isUserLoggedIn = async (): Promise<boolean> => {
     const userId = await AsyncStorage.getItem(STORAGE_KEYS.USER_ID);
     return !!userId;
   } catch (error) {
-    console.error('Erro ao verificar login do usuário:', error);
+    // Removido o console.error para evitar logs na interface do usuário
     return false;
   }
 };
@@ -203,7 +254,7 @@ export const logoutUser = async (): Promise<boolean> => {
     await AsyncStorage.multiRemove(keys);
     return true;
   } catch (error) {
-    console.error('Erro ao fazer logout:', error);
+    // Removido o console.error para evitar logs na interface do usuário
     return false;
   }
 }; 
