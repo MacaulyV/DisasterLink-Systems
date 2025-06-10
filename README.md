@@ -173,7 +173,7 @@ Agora é só assistir o vídeo de apresentação e demonstração do DisasterLin
 
 ---
 
-> **No mundo real:**
+**No mundo real:**
 > 
 > 
 > O DisasterLink conecta cidadãos, doadores, abrigos e autoridades de forma rápida e eficiente. Cada funcionalidade existe pra resolver um problema real que acontece em desastres — seja informar, proteger, direcionar pra abrigo ou facilitar doações.
