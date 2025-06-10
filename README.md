@@ -265,7 +265,7 @@ npx expo start        # Pressione "a" para Android ou "i" para iOS
     Toda a API já possui exemplos de requests e respostas documentados diretamente no Swagger.
     
     - **Links rápidos:**
-        - **📱 Baixar APK:** [DisasterLink.App](https://foodbridge.app/)
-        - **🌐 Testes a API C# (Swagger):** [https://disasterlink-api.fly.dev/swagger](https://disasterlink-api.fly.dev/swagger/)
+        - ** 📱 Baixar APK: ** [DisasterLink.App](https://foodbridge.app/)
+        - ** 🌐 Testes a API C# (Swagger): ** [https://disasterlink-api.fly.dev/swagger](https://disasterlink-api.fly.dev/swagger/)
 
 ##
