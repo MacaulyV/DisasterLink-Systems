@@ -225,57 +225,16 @@ Agora é só assistir o vídeo de apresentação e demonstração do DisasterLin
 ├── package.json             # 📦 Lista de dependências e scripts
 └── tsconfig.json            # 📜 Configurações do compilador TypeScript
 ```
-```
-
----
 
 ## 🗺️ **Guia Visual das Telas – DisasterLink App**
 
-| 🧭 Etapa | 🖼️ Tela | 📱 Ícone | **O que faz na prática?** |
-| --- | --- | --- | --- |
-| **Inicialização** | Splash | 🚀 | Tela de abertura enquanto carrega o app. |
-| **Boas-vindas** | Onboarding | 👋 | Explica o app e mostra as funções principais pra quem acabou de instalar. |
-| **Autenticação** | Login | 🔑 | Usuário entra na conta pra acessar as funções do app. |
-| **Autenticação** | Cadastro | 📝 | Tela pra criar nova conta, preenchendo dados como nome, e-mail, senha e localização. |
-| **Núcleo** | Perfil | 👤 | Mostra dados do usuário, opção de editar perfil e configurações da conta. |
-| **Funcionalidade** | Abrigos | 🏕️ | Lista ou mapa dos abrigos temporários disponíveis perto do usuário. |
-| **Funcionalidade** | Pontos de Coleta | 📦 | Exibe locais onde é possível doar ou receber suprimentos e doações. |
-| **Funcionalidade** | Alertas | ⚠️ | Mostra alertas meteorológicos, de desastres e orientações importantes da região do usuário. |
-| **Funcionalidade** | IA | 🤖 | Assistente inteligente que responde dúvidas, dá dicas e ajuda na navegação do app. |
+![DisasterLink Systems-Capa.png](https://github.com/user-attachments/assets/650cd364-8adf-424e-bbc9-880ddf48a319)
 
 ---
 
 ## 📦 Todas as **Dependências do Projeto**
 
-| Ícone | Biblioteca | Pra que serve? | Onde aparece no app |
-| --- | --- | --- | --- |
-| 🎨 | **@expo/vector-icons** | Ícones prontos e populares para menus, botões, etc | App todo |
-| 💾 | **@react-native-async-storage/async-storage** | Salvar dados localmente (login, configs, cache) | Autenticação, prefs |
-| 📑 | **@react-navigation/native** | Navegação entre telas (core) | App todo |
-| 📚 | **@react-navigation/drawer** | Menu lateral deslizante (drawer menu) | Menu lateral |
-| 🗂️ | **@react-navigation/native-stack** | Fluxo de telas em pilha (push/pop) | Navegação interna |
-| ⚙️ | **expo** | Base do Expo, gerenciamento do projeto | Infraestrutura |
-| 📸 | **expo-camera** | Acesso à câmera (tirar fotos, escanear) | Envio de imagens |
-| 📁 | **expo-file-system** | Manipular arquivos no dispositivo | Upload/download |
-| 🔡 | **expo-font** | Carregar fontes personalizadas | Layout, tipografia |
-| 🖼️ | **expo-image** | Imagem otimizada | Carregamento rápido |
-| 🖼️📷 | **expo-image-picker** | Selecionar fotos do device (galeria/câmera) |  Perfil |
-| 🌫️ | **expo-blur** | Efeito blur (desfoque visual) | Fundos/menus |
-| 🌈 | **expo-linear-gradient** | Criar gradientes bonitos | Backgrounds |
-| 📍 | **expo-location** | Acessar localização/GPS | Alertas, abrigos |
-| 🚦 | **expo-status-bar** | Customizar a status bar | Layout geral |
-| 🚀 | **expo-splash-screen** | Tela de carregamento inicial (splash) | Startup do app |
-| 🖥️ | **expo-system-ui** | Muda tema do sistema (claro/escuro) | Aparência global |
-| 🌐 | **expo-linking** | Abrir links externos/deep linking | Compartilhamento |
-| 🌎 | **expo-web-browser** | Abre navegador externo pelo app | Acesso a links |
-| 🔄 | **react-native-gesture-handler** | Gestos avançados (swipe, drag) | Navegação/menu |
-| 🤸 | **react-native-reanimated** | Animações fluídas e performáticas | Transições |
-| 🟩 | **react-native-screens** | Melhora performance das telas | Navegação |
-| 🛡️ | **react-native-safe-area-context** | Garante conteúdo dentro das áreas seguras | Layout notch/borda |
-| 🖼️ | **react-native-gif** | Exibe GIFs animados | Feedback/layout |
-| 🎬 | **lottie-react-native** | Animações Lottie (.json, ex: loaders animados) | Telas de loading |
-| 📱 | **react-native** | Core do React Native (apps mobile) | Base do app |
-| 🌐 | **react-dom** / **react-native-web** | Suporte para rodar no navegador (web) | Versão web |
+![DisasterLink Systems-Capa.png](https://github.com/user-attachments/assets/4f4b722f-0ef1-43f5-b3fb-ff39a5225985)
 
 ---
 
