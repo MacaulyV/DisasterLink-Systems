@@ -181,6 +181,18 @@ Agora é só assistir o vídeo de apresentação e demonstração do DisasterLin
 
 ---
 
+## 🗺️ **Guia Visual das Telas – DisasterLink App**
+
+![DisasterLink Systems-Capa.png](https://github.com/user-attachments/assets/650cd364-8adf-424e-bbc9-880ddf48a319)
+
+---
+
+## 📦 Todas as **Dependências do Projeto**
+
+![DisasterLink Systems-Capa.png](https://github.com/user-attachments/assets/4f4b722f-0ef1-43f5-b3fb-ff39a5225985)
+
+---
+
 ## **🏗 Estrutura do Projeto**
 
 ```markdown
@@ -225,18 +237,6 @@ Agora é só assistir o vídeo de apresentação e demonstração do DisasterLin
 ├── package.json             # 📦 Lista de dependências e scripts
 └── tsconfig.json            # 📜 Configurações do compilador TypeScript
 ```
-
-## 🗺️ **Guia Visual das Telas – DisasterLink App**
-
-![DisasterLink Systems-Capa.png](https://github.com/user-attachments/assets/650cd364-8adf-424e-bbc9-880ddf48a319)
-
----
-
-## 📦 Todas as **Dependências do Projeto**
-
-![DisasterLink Systems-Capa.png](https://github.com/user-attachments/assets/4f4b722f-0ef1-43f5-b3fb-ff39a5225985)
-
----
 
 ## 🚀 Como Rodar Localmente
 
