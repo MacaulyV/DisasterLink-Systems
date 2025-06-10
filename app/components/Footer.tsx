@@ -3,131 +3,118 @@ import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../navigation/types';
 
 interface FooterProps {
-  activeScreen: 'menu' | 'shelters' | 'alerts' | 'profile';
-  onMenuPress: () => void;
+  activeScreen?: 'profile' | 'shelters' | 'alerts' | 'ai' | 'abrigos' | 'collection';
+  onMenuPress?: () => void;
 }
 
 const { width } = Dimensions.get('window');
 
 const Footer: React.FC<FooterProps> = ({ activeScreen, onMenuPress }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
-  const navigateTo = (screen: string) => {
-    // Implementação futura para navegação entre telas
-    console.log(`Navegando para: ${screen}`);
+  const navigateTo = (screen: keyof RootStackParamList) => {
+    navigation.navigate(screen);
   };
 
   return (
     <LinearGradient
-      colors={['#000000', '#1a237e', '#000000']}
-      start={{ x: 0.4, y: 0 }}
-      end={{ x: 0.5, y: 1 }}
-      style={styles.container}
+      colors={['rgba(0, 0, 0, 0.8)', '#000']}
+      style={styles.footer}
     >
-      <View style={styles.content}>
-        <TouchableOpacity 
-          style={styles.tabItem} 
-          onPress={onMenuPress}
-        >
-          <Ionicons 
-            name="menu-outline" 
-            size={24} 
-            color={activeScreen === 'menu' ? '#38b6ff' : '#ffffff'} 
-          />
-          <Text style={[
-            styles.tabLabel,
-            activeScreen === 'menu' && styles.activeTabLabel
-          ]}>
-            Menu
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity 
-          style={styles.tabItem} 
-          onPress={() => navigateTo('shelters')}
-        >
-          <Ionicons 
-            name="home-outline" 
-            size={24} 
-            color={activeScreen === 'shelters' ? '#38b6ff' : '#ffffff'} 
-          />
-          <Text style={[
-            styles.tabLabel,
-            activeScreen === 'shelters' && styles.activeTabLabel
-          ]}>
-            Abrigos
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity 
-          style={styles.tabItem} 
-          onPress={() => navigateTo('alerts')}
-        >
-          <Ionicons 
-            name="warning-outline" 
-            size={24} 
-            color={activeScreen === 'alerts' ? '#38b6ff' : '#ffffff'} 
-          />
-          <Text style={[
-            styles.tabLabel,
-            activeScreen === 'alerts' && styles.activeTabLabel
-          ]}>
-            Alertas
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity 
-          style={styles.tabItem} 
-          onPress={() => navigateTo('profile')}
-        >
-          <Ionicons 
-            name="person-outline" 
-            size={24} 
-            color={activeScreen === 'profile' ? '#38b6ff' : '#ffffff'} 
-          />
-          <Text style={[
-            styles.tabLabel,
-            activeScreen === 'profile' && styles.activeTabLabel
-          ]}>
-            Perfil
-          </Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity 
+        style={styles.footerItem} 
+        onPress={onMenuPress}
+      >
+        <Ionicons 
+          name="menu" 
+          size={24} 
+          color={activeScreen === undefined ? "#38b6ff" : "#fff"} 
+        />
+        <Text style={[
+          styles.footerText,
+          activeScreen === undefined && styles.activeText
+        ]}>Menu</Text>
+      </TouchableOpacity>
+      
+      <TouchableOpacity 
+        style={styles.footerItem} 
+        onPress={() => navigateTo('Shelters')}
+      >
+        <Ionicons 
+          name="home-outline" 
+          size={24} 
+          color={(activeScreen === 'shelters' || activeScreen === 'abrigos') ? "#38b6ff" : "#fff"} 
+        />
+        <Text style={[
+          styles.footerText,
+          (activeScreen === 'shelters' || activeScreen === 'abrigos') && styles.activeText
+        ]}>Abrigos</Text>
+      </TouchableOpacity>
+      
+      <TouchableOpacity 
+        style={styles.footerItem} 
+        onPress={() => navigateTo('Alerts')}
+      >
+        <Ionicons 
+          name="warning-outline" 
+          size={24} 
+          color={activeScreen === 'alerts' ? "#38b6ff" : "#fff"} 
+        />
+        <Text style={[
+          styles.footerText,
+          activeScreen === 'alerts' && styles.activeText
+        ]}>Alertas</Text>
+      </TouchableOpacity>
+      
+      <TouchableOpacity 
+        style={styles.footerItem} 
+        onPress={() => navigateTo('Profile')}
+      >
+        <Ionicons 
+          name="person-outline" 
+          size={24} 
+          color={activeScreen === 'profile' ? "#38b6ff" : "#fff"} 
+        />
+        <Text style={[
+          styles.footerText,
+          activeScreen === 'profile' && styles.activeText
+        ]}>Perfil</Text>
+      </TouchableOpacity>
     </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  footer: {
     position: 'absolute',
     bottom: 0,
     width: '100%',
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(255, 255, 255, 0.1)',
-    paddingBottom: 10,
-    paddingTop: 10,
-  },
-  content: {
+    height: 65,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    width: '100%',
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(255,255,255,0.1)',
+    paddingBottom: 10,
+    marginBottom: 5,
   },
-  tabItem: {
+  footerItem: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: width / 4,
+    paddingVertical: 5,
+    width: width / 5,
   },
-  tabLabel: {
-    color: '#ffffff',
+  footerText: {
+    color: '#fff',
     fontSize: 12,
-    marginTop: 4,
+    marginTop: 3,
   },
-  activeTabLabel: {
+  activeText: {
     color: '#38b6ff',
-    fontWeight: 'bold',
   },
 });
 

@@ -49,6 +49,53 @@ export interface RegisterData {
   bairro: string;
 }
 
+// Interface para os abrigos temporários
+export interface AbrigoTemporario {
+  abrigoId: number;
+  nome: string;
+  descricao: string;
+  cidadeMunicipio: string;
+  bairro: string;
+  logradouro: string;
+  capacidade: number;
+  imagemUrls: string[] | null;
+}
+
+// Interface para os pontos de coleta
+export interface PontoColeta {
+  pontoColetaId: number;
+  nome: string;
+  tipo: string;
+  descricao: string;
+  cidade: string;
+  bairro: string;
+  logradouro: string;
+  imagemUrls: string[] | null;
+  estoque: string;
+  dataInicio: string;
+  horarioFuncionamento: string;
+}
+
+// Interface para dados de participação no ponto de coleta
+export interface ParticipacaoPontoColeta {
+  formaDeAjuda: string;
+  mensagem?: string;
+  contato?: string;
+  telefone: string;
+}
+
+// Interface para os participantes de um ponto de coleta retornados pela API
+export interface ParticipantePontoColeta {
+  id: number;
+  pontoColetaId: number;
+  idUsuario: number;
+  formaDeAjuda: string;
+  mensagem: string;
+  contato: string;
+  telefone: string;
+  dataHora: string;
+}
+
 /**
  * Faz login do usuário
  */
@@ -256,5 +303,143 @@ export const logoutUser = async (): Promise<boolean> => {
   } catch (error) {
     // Removido o console.error para evitar logs na interface do usuário
     return false;
+  }
+};
+
+/**
+ * Obtém a lista de abrigos temporários disponíveis para uma cidade específica
+ * @param cidade Nome da cidade para buscar abrigos
+ * @returns Lista de abrigos temporários
+ */
+export const getAbrigosTemporarios = async (cidade: string): Promise<AbrigoTemporario[]> => {
+  try {
+    const response = await fetch(`https://disasterlink-api.fly.dev/api/AbrigosTemporarios/cidade/municipio?nomeCidade=${encodeURIComponent(cidade)}`);
+    
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Erro ao obter abrigos temporários');
+    }
+    
+    return await response.json();
+  } catch (error: any) {
+    console.error('Erro ao obter abrigos temporários:', error);
+    throw new Error(error.message || 'Não foi possível buscar os abrigos temporários');
+  }
+};
+
+/**
+ * Obtém a lista de pontos de coleta disponíveis para uma cidade específica
+ * @param cidade Nome da cidade para buscar pontos de coleta
+ * @param tipo Tipo de doação para filtrar (opcional)
+ * @returns Lista de pontos de coleta
+ */
+export const getPontosColeta = async (cidade: string, tipo?: string): Promise<PontoColeta[]> => {
+  try {
+    let url = `${API_BASE_URL}/api/PontosColeta?cidade=${encodeURIComponent(cidade)}`;
+    
+    // Adiciona o parâmetro de tipo se fornecido
+    if (tipo && tipo !== 'todos') {
+      url += `&tipo=${encodeURIComponent(tipo)}`;
+    }
+    
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Erro ao obter pontos de coleta');
+    }
+    
+    return await response.json();
+  } catch (error: any) {
+    console.error('Erro ao obter pontos de coleta:', error);
+    throw new Error(error.message || 'Não foi possível buscar os pontos de coleta');
+  }
+};
+
+/**
+ * Registra a participação de um usuário em um ponto de coleta
+ * @param pontoColetaId ID do ponto de coleta
+ * @param idUsuario ID do usuário
+ * @param dadosParticipacao Dados da participação
+ * @returns Resultado da operação
+ */
+export const participarPontoColeta = async (
+  pontoColetaId: number, 
+  idUsuario: string, 
+  dadosParticipacao: ParticipacaoPontoColeta
+): Promise<any> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/PontosColeta/${pontoColetaId}/participar?idUsuario=${idUsuario}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(dadosParticipacao),
+    });
+    
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null);
+      throw new Error(errorData?.message || 'Erro ao registrar participação');
+    }
+    
+    if (response.status === 204) {
+      return { success: true };
+    }
+    
+    return response.json();
+  } catch (error: any) {
+    console.error('Erro ao registrar participação:', error);
+    throw new Error(error.message || 'Não foi possível registrar sua participação');
+  }
+};
+
+/**
+ * Obtém a lista de participantes de um ponto de coleta específico
+ * @param pontoColetaId ID do ponto de coleta
+ * @returns Lista de participantes do ponto de coleta
+ */
+export const getParticipantesPontoColeta = async (pontoColetaId: number): Promise<ParticipantePontoColeta[]> => {
+  try {
+    if (!pontoColetaId || isNaN(pontoColetaId)) {
+      console.error('ID do ponto de coleta inválido:', pontoColetaId);
+      throw new Error('ID do ponto de coleta inválido');
+    }
+    
+    console.log(`Buscando participantes para o ponto de coleta ID: ${pontoColetaId}`);
+    const url = `${API_BASE_URL}/api/PontosColeta/${pontoColetaId}/participantes`;
+    console.log('URL da requisição:', url);
+    
+    const response = await fetch(url);
+    
+    // Tenta capturar o texto da resposta para fins de depuração
+    const responseText = await response.text();
+    console.log('Resposta da API (texto):', responseText);
+    
+    // Se a resposta não tiver conteúdo ou for inválida, tratamos isso
+    if (!responseText || responseText.trim() === '') {
+      console.error('Resposta vazia da API');
+      throw new Error('Erro: Resposta vazia do servidor');
+    }
+    
+    let data;
+    try {
+      // Tenta converter o texto em JSON
+      data = JSON.parse(responseText);
+    } catch (jsonError) {
+      console.error('Erro ao converter resposta para JSON:', jsonError);
+      throw new Error('Erro ao processar a resposta do servidor');
+    }
+    
+    // Verifica se o resultado é um array
+    if (!Array.isArray(data)) {
+      console.error('Resposta não é um array:', data);
+      throw new Error('Formato de resposta inválido');
+    }
+    
+    console.log('Participantes retornados:', data.length);
+    return data;
+  } catch (error: any) {
+    console.error('Erro ao obter participantes:', error);
+    throw new Error(error.message || 'Não foi possível buscar os participantes do ponto de coleta');
   }
 }; 

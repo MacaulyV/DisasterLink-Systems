@@ -10,11 +10,11 @@ import OnboardingScreen from '../screens/Onboarding';
 import LoginScreen from '../screens/Login';
 import RegisterScreen from '../screens/Register';
 import ProfileScreen from '../screens/Profile';
+import AIScreen from '../screens/AI';
+import AbrigosTemporariosScreen from '../screens/AbrigosTemporarios';
+import PontoColetaScreen from '../screens/PontoColeta';
 // Importa as telas futuras (serão implementadas posteriormente)
-// import SheltersScreen from '../screens/Shelters';
-// import CollectionScreen from '../screens/Collection';
-// import AIScreen from '../screens/AI';
-// import AlertsScreen from '../screens/Alerts';
+import AlertasClimaticosScreen from '../screens/AlertasClimaticos';
 
 // Importa os serviços
 import { isOnboardingCompleted } from '../services/OnboardingService';
@@ -26,51 +26,55 @@ import { RootStackParamList } from './types';
 // Cria o navegador
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+// Componente de carregamento
+const LoadingScreen = () => (
+  <LinearGradient
+    colors={['#070709', '#1b1871']}
+    start={{ x: 0, y: 0 }}
+    end={{ x: 1, y: 1 }}
+    style={styles.loadingContainer}
+  >
+    <ActivityIndicator size="large" color="#38b6ff" />
+  </LinearGradient>
+);
+
+// Componente principal de navegação
 const AppNavigator = () => {
-  // Estado para controlar a tela inicial
-  const [initialRouteName, setInitialRouteName] = useState<keyof RootStackParamList | null>(null);
+  // Estados
   const [isLoading, setIsLoading] = useState(true);
+  const [initialRouteName, setInitialRouteName] = useState<keyof RootStackParamList>('Splash');
 
-  // Verifica o status do app (onboarding e login)
+  // Efeito para verificar o estado inicial do app
   useEffect(() => {
-    const checkAppStatus = async () => {
+    const checkAppState = async () => {
       try {
-        const userLoggedIn = await isUserLoggedIn();
-        
-        // Se o usuário já estiver logado, vai direto para a Home
-        if (userLoggedIn) {
-          setInitialRouteName('Profile');
-          return;
-        }
-
+        // Verifica se o onboarding já foi concluído
         const onboardingCompleted = await isOnboardingCompleted();
-        // Se o onboarding já foi completado, vai para o Login
-        // Caso contrário, inicia na Splash (que leva ao Onboarding)
-        setInitialRouteName(onboardingCompleted ? 'Login' : 'Splash');
+        
+        if (!onboardingCompleted) {
+          setInitialRouteName('Onboarding');
+        } else {
+          // Verifica se o usuário está logado
+          const userLoggedIn = await isUserLoggedIn();
+          
+          // Define a tela inicial com base na autenticação
+          setInitialRouteName(userLoggedIn ? 'Profile' : 'Login');
+        }
       } catch (error) {
-        console.error('Erro ao verificar status do app:', error);
-        // Em caso de erro, assume que o onboarding não foi completado
-        setInitialRouteName('Splash');
+        // Em caso de erro, vai para o onboarding
+        setInitialRouteName('Onboarding');
       } finally {
+        // Finaliza o carregamento
         setIsLoading(false);
       }
     };
 
-    checkAppStatus();
+    checkAppState();
   }, []);
 
-  // Exibe uma tela de carregamento enquanto verifica o status
-  if (isLoading || !initialRouteName) {
-    return (
-      <LinearGradient
-        colors={['#070709', '#1b1871']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 15, y: 1 }}
-        style={styles.loadingContainer}
-      >
-        <ActivityIndicator size="large" color="#38b6ff" />
-      </LinearGradient>
-    );
+  // Se estiver carregando, mostra a tela de carregamento
+  if (isLoading) {
+    return <LoadingScreen />;
   }
 
   return (
@@ -88,16 +92,16 @@ const AppNavigator = () => {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
-        {/* Telas futuras (serão implementadas posteriormente) */}
-        {/* <Stack.Screen name="Shelters" component={SheltersScreen} /> */}
-        {/* <Stack.Screen name="Collection" component={CollectionScreen} /> */}
-        {/* <Stack.Screen name="AI" component={AIScreen} /> */}
-        {/* <Stack.Screen name="Alerts" component={AlertsScreen} /> */}
+        <Stack.Screen name="AI" component={AIScreen} />
+        <Stack.Screen name="Shelters" component={AbrigosTemporariosScreen} />
+        <Stack.Screen name="Collection" component={PontoColetaScreen} />
+        <Stack.Screen name="Alerts" component={AlertasClimaticosScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
+// Estilos
 const styles = StyleSheet.create({
   loadingContainer: {
     flex: 1,

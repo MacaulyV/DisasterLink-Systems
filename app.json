@@ -9,11 +9,15 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
+      "image": "./assets/images/DisasterLink-Logo.png",
+      "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
     "ios": {
       "supportsTablet": true,
       "splash": {
+        "image": "./assets/images/DisasterLink-Logo.png",
+        "resizeMode": "contain",
         "backgroundColor": "#000000"
       }
     },
@@ -23,9 +27,19 @@
         "backgroundColor": "#000000"
       },
       "splash": {
+        "image": "./assets/images/DisasterLink-Logo.png",
+        "resizeMode": "contain",
         "backgroundColor": "#000000"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.disasterlink.app",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +50,11 @@
     ],
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c3db79e5-7328-40c1-89a8-0f1b8677131a"
+      }
+    }
   }
 }

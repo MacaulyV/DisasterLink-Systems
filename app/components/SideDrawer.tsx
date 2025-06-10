@@ -21,6 +21,8 @@ import Animated, {
   withTiming,
   Easing
 } from 'react-native-reanimated';
+import { RootStackParamList } from '../navigation/types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 interface SideDrawerProps {
   visible: boolean;
@@ -82,7 +84,7 @@ const Divider = ({ delay }: { delay: number }) => {
 };
 
 const SideDrawer: React.FC<SideDrawerProps> = ({ visible, onClose, onLogout }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const translateX = useSharedValue(-drawerWidth);
   const opacity = useSharedValue(0);
   
@@ -162,9 +164,9 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ visible, onClose, onLogout }) =
     }
   }, [visible, translateX, opacity, logoScale, isClosing]);
 
-  const navigateTo = (screen: string) => {
-    // Implementação futura para navegação entre telas
-    console.log(`Navegando para: ${screen}`);
+  const navigateTo = (screen: keyof RootStackParamList) => {
+    // Navega para a tela especificada
+    navigation.navigate(screen);
     handleClose();
   };
   
@@ -246,7 +248,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ visible, onClose, onLogout }) =
             <AnimatedMenuItem 
               icon="home-outline" 
               title="Abrigos Temporários" 
-              onPress={() => navigateTo('shelters')} 
+              onPress={() => navigateTo('Shelters')} 
               delay={0}
             />
             
@@ -255,7 +257,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ visible, onClose, onLogout }) =
             <AnimatedMenuItem 
               icon="location-outline" 
               title="Pontos de Coleta" 
-              onPress={() => navigateTo('collection')} 
+              onPress={() => navigateTo('Collection')} 
               delay={2}
             />
             
@@ -264,7 +266,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ visible, onClose, onLogout }) =
             <AnimatedMenuItem 
               icon="bulb-outline" 
               title="Recomendação com IA" 
-              onPress={() => navigateTo('ai')} 
+              onPress={() => navigateTo('AI')} 
               delay={4}
             />
             
@@ -273,7 +275,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ visible, onClose, onLogout }) =
             <AnimatedMenuItem 
               icon="warning-outline" 
               title="Alertas Climaticos" 
-              onPress={() => navigateTo('alerts')} 
+              onPress={() => navigateTo('Alerts')} 
               delay={6}
             />
             
@@ -282,7 +284,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ visible, onClose, onLogout }) =
             <AnimatedMenuItem 
               icon="person-outline" 
               title="Tela de Perfil" 
-              onPress={() => navigateTo('profile')} 
+              onPress={() => navigateTo('Profile')} 
               delay={8}
             />
           </ScrollView>
