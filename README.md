@@ -267,7 +267,7 @@ npx expo start        # Pressione "a" para Android ou "i" para iOS
     
 ## 🔗 Links Rápidos
 
-- **📱 Baixar APK:** [DisasterLink.App](https://foodbridge.app/)
+- **📱 Baixar APK:** [DisasterLink.App](https://drive.google.com/file/d/1iP9FwyaJj6_PxRwQfBnEBnkCZ96qV1t0/view?usp=drive_link)
 - **🌐 Testar a API C# (Swagger):** [https://disasterlink-api.fly.dev/swagger](https://disasterlink-api.fly.dev/swagger/)
 
 ##
